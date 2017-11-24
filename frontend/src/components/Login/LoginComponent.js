@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import 'Login.css';
+import './Login.css';
 
 export default class Login extends Component {
     render( ){
@@ -21,7 +21,7 @@ export default class Login extends Component {
                      <button id="buttonstyle" type="submit" className="btn btn-success">Login</button>
                 </form>
                  <h3>Login with Facebook</h3>
-                 <button id="" type="submit" className="Facebook">Continue with Facebook</button>
+                 <button id="" type="submit" className="facebook">Continue with Facebook</button>
            </div>
         )
     }
