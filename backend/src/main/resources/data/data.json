@@ -1,0 +1,95 @@
+{
+  "users": [],
+  "recommendations": [
+    {
+      "location": "Ailefroide, Écrins, France",
+      "activity": "Rock Climbing",
+      "type": "sports",
+      "images": [
+        "climbing_ailefroide_1.jpg"
+      ]
+    },
+    {
+      "location": "Portland, Dorset",
+      "activity": "Rock Climbing",
+      "type": "sports",
+      "images": [
+        "climbing_portland_1.jpg"
+      ]
+    },
+    {
+      "location": "Llanberis Pass, Snowdonia",
+      "activity": "Rock Climbing",
+      "type": "sports",
+      "images": [
+        "climbing_llanberis_pass_1.jpg"
+      ]
+    },
+    {
+      "location": "Siurana, Catalonia, Spain",
+      "activity": "Rock Climbing",
+      "type": "sports",
+      "images": [
+        "climbing_siurana_1.jpg"
+      ]
+    },
+    {
+      "location": "Fontainebleau, France",
+      "activity": "Rock Climbing",
+      "type": "sports",
+      "images": [
+        "climbing_Fontainebleau_1.jpg"
+      ]
+    },
+    {
+      "location": "San Vito Lo Capo, Sicily",
+      "activity": "Rock Climbing",
+      "type": "sports",
+      "images": [
+        "climbing_San_Vito_1.jpg"
+      ]
+    },
+    {
+      "location": "West Penwith, Cornwall",
+      "activity": "Rock Climbing",
+      "type": "sports",
+      "images": [
+        "climbing_West_Penwith_1.jpg"
+      ]
+    },
+    {
+      "location": "Västervik, Sweden",
+      "activity": "Rock Climbing",
+      "type": "sports",
+      "images": [
+        "climbing_Vaestervik_1.jpg"
+      ]
+    },
+    {
+      "location": "Costa Blanca, Spain",
+      "activity": "Rock Climbing",
+      "type": "sports",
+      "images": [
+        "climbing_costa_blanca_1.jpg"
+      ]
+    },
+    {
+      "location": "Yosemite, USA",
+      "activity": "Rock Climbing",
+      "type": "sports",
+      "images": [
+        "climbing_yosemite_1.jpg",
+        "climbing_yosemite_2.jpg"
+      ]
+    },
+    {
+      "location": "Cat Ba, Vietnam",
+      "activity": "Rock Climbing",
+      "type": "sports",
+      "images": [
+        "climbing_cat_ba_1.jpg",
+        "climbing_cat_ba_2.jpg"
+      ]
+    }
+  ]
+}
