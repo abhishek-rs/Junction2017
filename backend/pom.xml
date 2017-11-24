@@ -24,6 +24,7 @@
         <jackson-jaxrs-version>2.8.9</jackson-jaxrs-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boot.version>1.5.8.RELEASE</spring.boot.version>
+        <joda.time>2.9.9</joda.time>
     </properties>
 
     <dependencies>
@@ -36,6 +37,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
             <version>${spring.boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda.time}</version>
         </dependency>
 
         <dependency>
@@ -96,6 +103,13 @@
             <version>${jackson-jaxrs-version}</version>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-client</artifactId>
