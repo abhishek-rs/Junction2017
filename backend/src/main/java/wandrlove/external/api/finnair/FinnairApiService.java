@@ -1,4 +1,4 @@
-package wandrlove.service;
+package wandrlove.external.api.finnair;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import org.apache.cxf.jaxrs.client.ClientConfiguration;
@@ -10,13 +10,13 @@ import wandrlove.external.api.finnair.Offers.Offers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FinnairService {
+public class FinnairApiService {
 
-    private static FinnairService instance = null;
+    private static FinnairApiService instance = null;
     private InstantOffers instantOffers = null;
     private Offers offers = null;
 
-    protected FinnairService() {
+    protected FinnairApiService() {
         JacksonJsonProvider provider = new JacksonJsonProvider();
         List providers = new ArrayList();
         providers.add(provider);
@@ -30,9 +30,9 @@ public class FinnairService {
 
     }
 
-    public static FinnairService getInstance() {
+    public static FinnairApiService getInstance() {
         if (instance == null) {
-            instance = new FinnairService();
+            instance = new FinnairApiService();
         }
         return instance;
     }
