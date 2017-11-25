@@ -4,32 +4,6 @@
   width: 100%;
 }
 
-#top-bar{
-  background: white;
-  position: fixed;
-  color: #0b1560;
-  width: 20%;
-  top: 10px;
-  left: 20px;
-  height: 80px;
-  padding: 10px;
-  z-index: 999;
-  text-align: center;
-  font-family: 'Raleway', sans-serif;
-}
-
-#top-bar h3{
-  margin: 10px;
-}
-
-#top-bar p{
-  margin: 0px;
-}
-
-#top-bar p img{
-  width: 60%;
-}
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
