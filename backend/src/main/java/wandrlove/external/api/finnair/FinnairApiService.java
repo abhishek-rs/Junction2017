@@ -9,14 +9,12 @@ import wandrlove.external.api.finnair.InstantOffers.InstantOffers;
 import wandrlove.external.api.finnair.Offers.Offers;
 
 import javax.annotation.PostConstruct;
-import javax.ws.rs.POST;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class FinnairApiService {
 
-    private static FinnairApiService instance = null;
     private InstantOffers instantOffers = null;
     private Offers offers = null;
 

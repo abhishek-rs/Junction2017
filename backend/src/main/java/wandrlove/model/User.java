@@ -2,11 +2,15 @@ package wandrlove.model;
 
 import org.joda.time.DateTime;
 
+import java.util.List;
+
 public class User {
 
     private String userId;
 
     private String homePlace;
+
+    private List<String> citiesLived;
 
     private DateTime fromDate;
 
@@ -24,6 +28,14 @@ public class User {
 
     public void setHomePlace(String homePlace) {
         this.homePlace = homePlace;
+    }
+
+    public List<String> getCitiesLived() {
+        return citiesLived;
+    }
+
+    public void setCitiesLived(List<String> citiesLived) {
+        this.citiesLived = citiesLived;
     }
 
     public DateTime getFromDate() {
