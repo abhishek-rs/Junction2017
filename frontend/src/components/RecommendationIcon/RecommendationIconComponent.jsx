@@ -4,12 +4,19 @@ import './RecommendationIconComponent.css';
 export default class RecommendationIconComponent extends Component {
     constructor(props){
         super(props);
+        this.handleClick = this.handleClick.bind(this);
     }
     
+    handleClick(){
+        this.props.onIconClick(this.props.id);
+    }
+
     render() {
-      let type = this.props.type;  
-      return (
-        <div className="rec-icon">
+      let type = this.props.type;
+      let id = this.props.id;
+
+    return (
+        <div className="rec-icon" onClick={this.handleClick}>
             { 
             type === 'music' ? <div className='pin music'></div> : ''
             }
