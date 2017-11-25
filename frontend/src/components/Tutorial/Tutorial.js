@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import TutorialTile from './TutorialTile';
 
 const styles = {
   root: {
@@ -89,39 +90,30 @@ const tilesData = [
   },
 ];
 
-/**
- * A simple example of a scrollable `GridList` containing a [Subheader](/#/components/subheader).
- */
 
-const Tutorial = () => (
-  <div style={styles.root}>
-  <p>Welcome to Wandrlove! Select items that you appreciate when you are traveling from pictures below, so we will make sure you will get the deals you like!</p>
-  <MuiThemeProvider>
-  <GridList
-    cols={4}
-    cellHeight={200}
-    cellWidth={400}
-    padding={1}
-    style={styles.gridList}
-  >
-    {tilesData.map((tile) => (
-      <GridTile
-        key={tile.img}
-        title={tile.title}
-        actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-        actionPosition="left"
-        titlePosition="bottom"
-        titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-        cols={tile.featured ? 2 : 1}
-        rows={tile.featured ? 2 : 1}
+export default class Tutorial extends React.Component {
+  constructor(props){
+    super(props);
+    this.interests = [];
+  }
+
+  render(){
+    return(
+      <div style={styles.root}>
+      <p>Welcome to Wandrlove! Select items that you appreciate when you are traveling from pictures below, so we will make sure you will get the deals you like!</p>
+      <MuiThemeProvider>
+      <GridList
+        cols={4}
+        cellHeight={200}
+        padding={1}
+        style={styles.gridList}
       >
-        <img src={require('../../img/interests/' + tile.img)} />
-      </GridTile>
-    ))}
-  </GridList>
-  <RaisedButton style={styles.raisedButton}>I'm happy with my choices, let's go</RaisedButton>
-    </MuiThemeProvider>
-  </div>
-);
-
-export default Tutorial;
+        {tilesData.map((tile) => (
+          <TutorialTile title={tile.title} featured={tile.featured} img={tile.img} bgColor={'red'}/>
+        ))}
+      </GridList>
+      <RaisedButton style={styles.raisedButton}>I'm happy with my choices, let's go</RaisedButton>
+        </MuiThemeProvider>
+      </div>
+    )}
+  }
