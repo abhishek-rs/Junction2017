@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class AirportService {
     File file = null;
-
+    File airportCityFile = null;
     public AirportService() {
 
     }
@@ -27,6 +27,7 @@ public class AirportService {
 
     public List<Airport> getAllAirports() {
         ObjectMapper objectMapper = new ObjectMapper();
+
         Airport[] pojos = new Airport[0];
         try {
             pojos = objectMapper.readValue(file, Airport[].class);
@@ -34,6 +35,8 @@ public class AirportService {
             e.printStackTrace();
         }
         List<Airport> airportList = new ArrayList<>(Arrays.asList(pojos));
+
+
         return airportList;
     }
 

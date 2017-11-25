@@ -1,6 +1,13 @@
 package wandrlove.external.api.finnair.Airports.models;
 
 public class Airport {
+    private String locationCode;
+    private String title;
+    private boolean airAlliance;
+    private boolean airPartner;
+    private String city;
+    private String country;
+    private String continent;
 
     public String getLocationCode() {
         return locationCode;
@@ -34,10 +41,29 @@ public class Airport {
         this.airPartner = airPartner;
     }
 
-    private String locationCode;
-    private String title;
-    private boolean airAlliance;
-    private boolean airPartner;
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getContinent() {
+        return continent;
+    }
+
+    public void setContinent(String continent) {
+        this.continent = continent;
+    }
 
 
 }
