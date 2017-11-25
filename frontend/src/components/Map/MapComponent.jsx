@@ -124,7 +124,6 @@ export default class MapComponent extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.recommendations)
     this.setState({
       recs: this.props.recommendations
     });

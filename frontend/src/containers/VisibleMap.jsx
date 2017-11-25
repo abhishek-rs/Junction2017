@@ -15,4 +15,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MapComponent);
+const VisibleMap = connect(mapStateToProps, mapDispatchToProps)(MapComponent)
+
+export default VisibleMap
