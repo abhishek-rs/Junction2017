@@ -266,6 +266,7 @@
     },
     {
       "location": "Hoi An, Vietnam",
+      "airport_code": "SAT",
       "type": "place",
       "activity": "Visit New Place",
       "categories": ["city", "museum"],
@@ -276,6 +277,7 @@
     },
     {
       "location": "San Antonio, Ecuador",
+      "airport_code": "SAT",
       "type": "place",
       "activity": "Visit New Place",
       "categories": ["city", "museum"],
@@ -285,6 +287,7 @@
     },
     {
       "location": "Quito, Ecuador",
+      "airport_code": "UIO",
       "type": "place",
       "activity": "Visit New Place",
       "categories": ["city", "museum"],
@@ -295,6 +298,7 @@
     },
     {
       "location": "Galapagos, Ecuador",
+      "airport_code": "GYE",
       "type": "place",
       "activity": "Visit New Place",
       "categories": ["city", "museum"],
