@@ -10,71 +10,6 @@ const recommendationTypes = [
 const defaultZoom = 2;
 const defaultCenter = {lat: 37.9908164, lng: 23.6682993};
 
-const recommendations = [
-  {
-    id: 1,
-    lat: 59.955413,
-    long: 10.337844,
-    activity: "Rock climbing",
-    location: "California",
-    type: recommendationTypes[0],
-    categories: ['a','b'],
-    images: ['nyc.jpg','nyc.jpg'],
-    month: 3,
-    price: 500,
-    month: 'Jun'
-  },
-  {
-    id: 2,
-    location: "New York",
-    lat: 71.955413,
-    activity: "Rock climbing",
-    long: 20.337844,
-    type: recommendationTypes[1],
-    categories: ['a','b'],
-    images: ['nyc.jpg','nyc.jpg'],
-    month: 4,
-    price: 500,
-    month: 'Jun'
-  },
-  {
-    id: 3,
-    lat: 59.955413,
-    long: 30.337844,
-    activity: "Rock climbing",
-    location: "SunnyVale",
-    type: recommendationTypes[2],
-    categories: ['a','b'],
-    images: ['nyc.jpg','nyc.jpg'],
-    price: 500,
-    month: 'Jun'
-  },
-  {
-    id: 4,
-    lat: 30.955413,
-    long: 40.337844,
-    activity: "Rock climbing",
-    location: "Stockholm",
-    type: recommendationTypes[3],
-    categories: ['a','b'],
-    images: ['nyc.jpg','nyc.jpg'],
-    price: 500,
-    month: 'Jun'
-  },
-  {
-    id: 5,
-    lat: 20.955413,
-    long: 50.337844,
-    activity: "Rock climbing",
-    location: "Helsinki",
-    type: recommendationTypes[4],
-    categories: ['a','b'],
-    images: ['nyc.jpg','nyc.jpg'],
-    price: 500,
-    month: 'Jun'
-  },
-]
-
 export default class MapComponent extends Component {
   constructor(props){
     super(props);
@@ -93,12 +28,12 @@ export default class MapComponent extends Component {
 
   reRenderIcons(id){
     let recs = [];
-    for (let r of this.props.recommendations){
+    for (let r of this.state.recs){
       if(r.id !== id){
         recs.push(
           <RecommendationIconComponent
           lat={r.lat}
-          lng={r.long}
+          lng={r.lon}
           onIconClick={this.handleClick}
           type={r.type}
           key={r.id}
@@ -108,11 +43,12 @@ export default class MapComponent extends Component {
       }
     }
     if(id !== null){
-      let r = this.props.recommendations.filter( r => r.id === id)[0];
+      let r = this.state.recs.filter( r => r.id === id)[0];
+      
       recs.push(
         <RecommendationCardComponent
         lat={r.lat}
-        lng={r.long}
+        lng={r.lon}
         rec={r}
         onCancelClick={this.handleClick}
         />
@@ -123,14 +59,28 @@ export default class MapComponent extends Component {
     });
   }
 
-  componentDidMount() {
-    this.setState({
-      recs: this.props.recommendations
-    });
+  componentWillReceiveProps(nextProps) {
+    if(nextProps){
+      this.setState({
+        recs: nextProps.recommendations
+      }, this.reRenderIcons(null));
+    }
   }
 
   render() {
-    console.log(this.props.recommendations)
+    let recs = [];
+    for (let r of this.state.recs){
+        recs.push(
+          <RecommendationIconComponent
+          lat={r.lat}
+          lng={r.lon}
+          onIconClick={this.handleClick}
+          type={r.type}
+          key={r.id}
+          id={r.id}
+        />
+        );
+    }
     return (
       <div id="map-container">
       <div id="top-bar">
@@ -141,7 +91,7 @@ export default class MapComponent extends Component {
           defaultCenter={defaultCenter}
           defaultZoom={3}
         >
-          {this.state.recs !== [] ? this.state.recs: ""}
+          {recs !== [] ? recs : ""}
         </GoogleMapReact>
       </div>
     );

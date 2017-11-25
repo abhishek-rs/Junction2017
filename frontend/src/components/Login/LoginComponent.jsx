@@ -32,7 +32,7 @@ export default class Login extends Component {
                   </Link>
                   <div>
                   <Link to="/">
-                        <button onClick={this.props.onFbLoginClick} className="facebook"><img alt="fb" class="btnIcon" src={require("../../img/fb.png")}/><span>Login with Facebook</span></button>
+                        <button onClick={this.props.onFbLoginClick} className="facebook"><img alt="fb" className="btnIcon" src={require("../../img/fb.png")}/><span>Login with Facebook</span></button>
                   </Link>
                   </div>
                 </form>

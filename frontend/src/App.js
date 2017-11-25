@@ -16,7 +16,7 @@ export default class App extends Component {
           <Route path='/login' component={VisibleLogin}/>
           <Route path='/tutorial' component={Tutorial}/>
           <Route path='/recommendation_detail/:number' component={RecommendationDetailComponent}/>
-          <Route exact path='' component={HomeComponent}/>
+          <Route exact path='' component={VisibleLogin}/>
         </Switch>
       </BrowserRouter>
     </div>
