@@ -93,7 +93,7 @@ export default class MapComponent extends Component {
 
   reRenderIcons(id){
     let recs = [];
-    for (let r of recommendations){
+    for (let r of this.props.recommendations){
       if(r.id !== id){
         recs.push(
           <RecommendationIconComponent
@@ -108,7 +108,7 @@ export default class MapComponent extends Component {
       }
     }
     if(id !== null){
-      let r = recommendations.filter( r => r.id === id)[0];
+      let r = this.props.recommendations.filter( r => r.id === id)[0];
       recs.push(
         <RecommendationCardComponent
         lat={r.lat}

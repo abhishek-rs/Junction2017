@@ -1,6 +1,7 @@
 const initialState = {
-    interests: [],
-    recommendations: []
-  }
+  interests: [],
+  recommendations: [],
+  requestInProgress: false
+}
   
-  export default initialState;
+export default initialState;
