@@ -16,7 +16,7 @@ public class User {
 
     private DateTime toDate;
 
-    private String[] interests;
+    private List<String> interests;
 
     public User(String userId) {
         this.userId = userId;
@@ -54,11 +54,11 @@ public class User {
         this.toDate = toDate;
     }
 
-    public String[] getInterests() {
+    public List<String> getInterests() {
         return interests;
     }
 
-    public void setInterests(String[] interests) {
+    public void setInterests(List<String> interests) {
         this.interests = interests;
     }
 }
