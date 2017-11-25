@@ -1,14 +1,34 @@
 import React, { Component } from 'react';
 import './RecommendationCardComponent.css';
+import Checkbox from 'material-ui/Checkbox';
+import ActionFavorite from 'material-ui/svg-icons/action/favorite';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import ActionFavoriteOutline from 'material-ui/svg-icons/action/favorite-border';
+import ActionDislikeOutline from 'material-ui/svg-icons/content/clear';
+import ActionDislike from 'material-ui/svg-icons/action/delete-forever';
+
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  checkbox: {
+    fontSize: "0.9em",
+  },
+};
 
 export default class RecommendationCardComponent extends Component {
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.deleteRecommendation = this.deleteRecommendation.bind(this);
     }
 
     handleClick(){
         this.props.onCancelClick(null);
+    }
+
+    deleteRecommendation(hello){
+      console.log(hello);
     }
 
     render() {
@@ -32,7 +52,26 @@ export default class RecommendationCardComponent extends Component {
             <div className="rec-images">{images}</div>
             <div>Estimated Price in <span className="month">{rec.month}</span></div>
             <div className="rec-price"> &euro; {rec.price}</div>
-            <span><a className="see-more" href="https://www.finnair.com/fi/gb/bookings">Book now</a></span>
+            <span><a className="see-more" target="_blank" href="https://www.finnair.com/fi/gb/bookings">Book now</a></span>
+            <MuiThemeProvider>
+            <div className="favorite">
+              <Checkbox
+                checkedIcon={<ActionFavorite />}
+                uncheckedIcon={<ActionFavoriteOutline />}
+                label="Add to Bucket List"
+                style={styles.checkbox}
+                labelStyle={{color: 'grey', fontFamily: 'Raleway'}} iconStyle={{fill: '#0d1973'}}
+                />
+                <Checkbox
+                  checkedIcon={<ActionDislike/>}
+                  uncheckedIcon={<ActionDislikeOutline />}
+                  style={styles.checkbox}
+                  labelStyle={{color: 'grey', fontFamily: 'Raleway'}} iconStyle={{fill: '#0d1973'}}
+                  label="This is not for me"
+                  onClick={this.deleteRecommendation}
+                  />
+            </div>
+            </MuiThemeProvider>
         </div>
       );
     }

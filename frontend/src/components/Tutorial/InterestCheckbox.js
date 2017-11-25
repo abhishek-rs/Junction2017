@@ -10,7 +10,6 @@ const styles = {
   checkbox: {
     marginLeft: 16,
     color: 'white !important',
-    borderColor: 'red',
   },
 };
 

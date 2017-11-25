@@ -1,6 +1,6 @@
 import React from "react";
 import {GridList, GridTile} from 'material-ui/GridList';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import InterestCheckbox from './InterestCheckbox';
 import { Link } from 'react-router-dom'
 import './Tutorial.css';
