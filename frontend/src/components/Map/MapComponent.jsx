@@ -130,10 +130,6 @@ export default class MapComponent extends Component {
   render() {
     return (
       <div id="map-container">
-      <div id="top-bar">
-        <h3>WandrLove</h3>
-        <p>Powered by <img src="finnair.png" alt="finnair"/></p>
-      </div>
         <GoogleMapReact
           defaultCenter={defaultCenter}
           defaultZoom={3}
