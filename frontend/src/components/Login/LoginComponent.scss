@@ -3,7 +3,7 @@
     height: 100%;
     width: 100%;
     margin-right: 0px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .background-video{
@@ -17,6 +17,12 @@
     bottom: 0;
     overflow: hidden;
     transform: scale(1.3, 1.2);
+    background: url("../../img/video.png") no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
 }
 
 .app-title{
@@ -24,7 +30,7 @@
     text-transform: uppercase;
 }
 
-.welcome-div{ 
+.welcome-div {
     z-index:10;
     text-align: center;
     color: white;
@@ -34,13 +40,15 @@
 }
 
 .border {
-    padding: 1%;
-    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    background: rgba(255,255,255,0.6);
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
     margin-left: 5%;
     margin-right: 5%;
+    width: 50%;
+    margin:auto;
 }
 
 
@@ -51,7 +59,7 @@
     border-width: medium;
     padding: 5px 24px 5px 24px;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 1.2em;
     margin-right: 8px;
     margin-top: 0px;
     margin-bottom: 3%;
@@ -68,7 +76,7 @@
         margin: 0px 15px 10px 10px;
         border-radius: 22px;
         font-size: 12px;
-        
+
     }
 
     input:focus{
@@ -78,7 +86,7 @@
     input:-webkit-autofill {
         -webkit-box-shadow: 0 0 0 30px white inset;
     }
-    
+
 }
 
 .facebook{
@@ -95,4 +103,56 @@
     input:focus{
         outline:none;
       }
+}
+
+.loginButton {
+  padding: 10px;
+  background-color: #0d1973;
+  width: 253px;
+  height: 40px;
+  color: white;
+  border-color: transparent;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-family: "Raleway";
+  margin-bottom: 30px;
+  margin-left: -5px;
+}
+
+.loginButton a {
+    text-decoration: none;
+    color: white;
+}
+
+.loginButton:hover {
+  background-color: white;
+  color: #0d1973;
+  border-color: #0d1973;
+}
+
+.loginButton:hover a{
+  color: #0d1973;
+}
+
+.logo {
+  height: 7em;
+  margin-left: -40px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+h2, h3, p {
+  color: #0d1973;
+}
+
+.fb-login-button {
+    margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  width: 240px !important;
+  border-radius: 10px !important;
+  height: 20px !important;
+  font-size: 1em !important;
 }

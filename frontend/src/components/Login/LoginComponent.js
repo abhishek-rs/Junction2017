@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './LoginComponent.css';
-import { Route, BrowserRouter, Link, Redirect, Switch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default class Login extends Component {
     render( ){
@@ -10,36 +10,32 @@ export default class Login extends Component {
                     <source src="video.mp4" type="video/mp4" />
                 </video>
                 <div className = "welcome-div" >
-                <div className ="border" >
-                <h1 className = "app-title">Wandrlove</h1>
-               <h2>
-                 Explore your inner adverturer with our personalised reccommendations
-               </h2>
-                <h3>
-                 Login with email
-                </h3>
-                <form>
-                    <div className="form-group">
-                        <input className="form-control" placeholder="Email"/>
-                    </div>
-                     <div className="form-group">
-                        <input type="password" className="form-control" placeholder="Password" />
-                     </div>
-                     <Link to="/">
-                    <button type="button" className="login-button">
-                        Login
-                    </button>
-                </Link>
-                    
-                 </form>
-                 <Link to="/">
-                    <button type="button" className="facebook">
-                        Continue with Facebook
-                    </button>
-                </Link>
-            </div>
-           </div>
-           </div>
+                <div className ="border">
+                  <img className="logo" alt="logo" src={require('../../img/logo.png')} />
+                 <h2>
+                   Explore your inner adventurer with personalised recommendations
+                 </h2>
+                  <h3>
+                   Login with email
+                  </h3>
+                  <form>
+                      <div className="form-group">
+                          <input className="form-control" placeholder="Email"/>
+                      </div>
+                       <div className="form-group">
+                          <input type="password" className="form-control" placeholder="Password" />
+                       </div>
+                       <Link to="/">
+                      <button type="button" className="loginButton">
+                          Login
+                      </button>
+                  </Link>
+                  <div id="fb-root"></div>
+                    <Link to="/"><div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div></Link>
+                </form>
+              </div>
+          </div>
+          </div>
         )
     }
 

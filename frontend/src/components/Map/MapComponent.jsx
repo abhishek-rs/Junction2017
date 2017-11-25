@@ -3,7 +3,6 @@ import GoogleMapReact from 'google-map-react';
 import './MapComponent.css';
 import RecommendationIconComponent from '../RecommendationIcon/RecommendationIconComponent'
 import RecommendationCardComponent from '../RecommendationCard/RecommendationCardComponent'
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 const recommendationTypes = [
   'likes', 'sport', 'home', 'travel', 'music'
 ];
@@ -79,7 +78,7 @@ export default class MapComponent extends Component {
   reRenderIcons(id){
     let recs = [];
     for (let r of recommendations){
-      if(r.id != id){
+      if(r.id !== id){
         recs.push(
           <RecommendationIconComponent
           lat={r.lat}
@@ -116,7 +115,7 @@ export default class MapComponent extends Component {
       <div id="map-container">
       <div id="top-bar">
         <h3>WandrLove</h3>
-        <p>Powered by <img src="finnair.png"/></p>
+        <p>Powered by <img src="finnair.png" alt="finnair"/></p>
       </div>
         <GoogleMapReact
           defaultCenter={defaultCenter}
