@@ -47,7 +47,7 @@ export default class RecommendationCardComponent extends Component {
       }
 
       let URLLink="https://beta.finnair.com/fi-fi/booking/flight-selection?origin=HEL&destination=" + rec.iata + "&cabin=ECONOMY&adults=1&children=0&infants=0&departureDate=2018-01-02&returnDate=2018-02-01";
-      
+
       return (
 
         <div className="rec-card">
@@ -56,7 +56,6 @@ export default class RecommendationCardComponent extends Component {
             <div className="rec-images">{images}</div>
             <div>Estimated Price in <span className="month">{rec.month}</span></div>
             <div className="rec-price"> &euro; {rec.price}</div>
-<<<<<<< HEAD
             <span><a className="see-more" target="_blank" href="https://www.finnair.com/fi/gb/bookings">Book now</a></span>
             <MuiThemeProvider>
             <div className="favorite">
@@ -77,9 +76,7 @@ export default class RecommendationCardComponent extends Component {
                   />
             </div>
             </MuiThemeProvider>
-=======
             <span><a className="see-more" href={URLLink}>Book now</a></span>
->>>>>>> 18956c66241592d7169f71896885ed744d94da6a
         </div>
       );
     }
