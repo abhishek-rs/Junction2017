@@ -4,13 +4,15 @@ public class Recommendation {
 
     private String id;
 
-    private String place;
+    private String location;
 
     private RecommendationType type;
 
-    private String icon;
+    private String activity;
 
-    private String reason;
+    private String tag;
+
+    private String[] categories;
 
     private String[] images;
 
@@ -24,16 +26,12 @@ public class Recommendation {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getLocation() {
+        return location;
     }
 
-    public String getPlace() {
-        return place;
-    }
-
-    public void setPlace(String place) {
-        this.place = place;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public RecommendationType getType() {
@@ -44,20 +42,28 @@ public class Recommendation {
         this.type = type;
     }
 
-    public String getIcon() {
-        return icon;
+    public String getActivity() {
+        return activity;
     }
 
-    public void setIcon(String icon) {
-        this.icon = icon;
+    public void setActivity(String activity) {
+        this.activity = activity;
     }
 
-    public String getReason() {
-        return reason;
+    public String getTag() {
+        return tag;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String[] getCategories() {
+        return categories;
+    }
+
+    public void setCategories(String[] categories) {
+        this.categories = categories;
     }
 
     public String[] getImages() {

@@ -1,31 +1,58 @@
-import React from "react";
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
+import './MapComponent.css';
+import RecommendationIconComponent from '../RecommendationIcon/RecommendationIconComponent'
 
-const style = {
-  width: '200px',
-  height: '200px',
-}
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const recommendationTypes = [
+  'likes', 'sport', 'home', 'travel', 'music'
+];
 
-export default class MapComponent extends React.Component {
+export default class MapComponent extends Component {
+  static defaultProps = {
+    center: {lat: 59.95, lng: 30.33},
+    zoom: 11
+  };
 
   render() {
+    
     return (
-      <Map
-        google={this.props.google}
-        zoom={14}
-        style={style}
-        visible={true}
+      <div id="map-container">
+      <div id="top-bar">
+        <h3>WandrLove</h3>
+        <p>Powered by <img src="finnair.png"/></p>
+      </div>
+        <GoogleMapReact
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}
         >
-
-        <Marker onClick={this.onMarkerClick}
-                name={'Current location'} />
-
-        <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              <h1>Hello</h1>
-            </div>
-        </InfoWindow>
-      </Map>
+          <RecommendationIconComponent
+            lat={59.955413}
+            lng={20.337844}
+            type={recommendationTypes[0]}
+          />
+          <RecommendationIconComponent
+            lat={59.955413}
+            lng={30.337844}
+            type={recommendationTypes[1]}
+          />
+          <RecommendationIconComponent
+            lat={59.955413}
+            lng={10.337844}
+            type={recommendationTypes[2]}
+          />
+          <RecommendationIconComponent
+            lat={59.955413}
+            lng={40.337844}
+            type={recommendationTypes[3]}
+          />
+          <RecommendationIconComponent
+            lat={59.955413}
+            lng={50.337844}
+            type={recommendationTypes[4]}
+          />
+        </GoogleMapReact>
+      </div>
     );
   }
 }
