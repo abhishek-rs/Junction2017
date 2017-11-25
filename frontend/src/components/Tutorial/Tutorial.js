@@ -95,9 +95,19 @@ export default class Tutorial extends React.Component {
   constructor(props){
     super(props);
     this.interests = [];
+    this.state = {
+       interest_color: true
+    }
+    this.updateInterests = this.updateInterests.bind(this);
+  }
+
+  updateInterests(){
+    console.log("interests updated");
+    this.setState({interest_color: !this.state.interest_color})
   }
 
   render(){
+    let bgColor = this.state.interest_color ? "red" : "white"
     return(
       <div style={styles.root}>
       <p>Welcome to Wandrlove! Select items that you appreciate when you are traveling from pictures below, so we will make sure you will get the deals you like!</p>
@@ -109,8 +119,16 @@ export default class Tutorial extends React.Component {
         style={styles.gridList}
       >
         {tilesData.map((tile) => (
-          <TutorialTile title={tile.title} featured={tile.featured} img={tile.img} bgColor={'red'}/>
-        ))}
+          <GridTile
+            key={tile.img}
+            title={tile.title}
+            actionIcon={<IconButton style={{backgroundColor: bgColor}} onClick={this.updateInterests.bind(this)}><StarBorder color="white" /></IconButton>}
+            actionPosition="left"
+            titlePosition="bottom"
+            titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+          >
+            <img style={styles.img} src={require('../../img/interests/' + tile.img)} />
+          </GridTile>))}
       </GridList>
       <RaisedButton style={styles.raisedButton}>I'm happy with my choices, let's go</RaisedButton>
         </MuiThemeProvider>
