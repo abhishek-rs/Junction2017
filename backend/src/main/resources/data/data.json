@@ -238,32 +238,32 @@
         "music_evanescense_1.jpg"
       ]
     },
-//    {
-//      "location": "Shanghai, China",
-//      "type": "visit",
-//      "activity": "Visit Friends",
-//      "images": [
-//        "city_shanghai_1.jpg"
-//      ]
-//    },
-//    {
-//      "location": "Tallinn, Estonia",
-//      "activity": "Visit Friends",
-//      "type": "visit",
-//      "images": [
-//        "city_tallinn_1.jpg",
-//        "city_tallinn_2.jpg"
-//      ]
-//    },
-//    {
-//      "location": "Cologne, Germany",
-//      "activity": "Visit Friends",
-//      "type": "visit",
-//      "images": [
-//        "city_cologne_1.jpg",
-//        "city_cologne_2.jpg"
-//      ]
-//    },
+    {
+      "location": "Shanghai, China",
+      "type": "visit",
+      "activity": "Visit Friends",
+      "images": [
+        "city_shanghai_1.jpg"
+      ]
+    },
+    {
+      "location": "Tallinn, Estonia",
+      "activity": "Visit Friends",
+      "type": "visit",
+      "images": [
+        "city_tallinn_1.jpg",
+        "city_tallinn_2.jpg"
+      ]
+    },
+    {
+      "location": "Cologne, Germany",
+      "activity": "Visit Friends",
+      "type": "visit",
+      "images": [
+        "city_cologne_1.jpg",
+        "city_cologne_2.jpg"
+      ]
+    },
     {
       "location": "Hoi An, Vietnam",
       "type": "place",
