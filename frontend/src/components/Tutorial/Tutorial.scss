@@ -7,11 +7,38 @@
   font-size: 1.5em;
   font-family: "Raleway";
   margin-bottom: 30px;
-  height: 80px;
+  height: 50px;
+}
+
+.raisedButton a {
+    text-decoration: none;
+    color: white;
 }
 
 .raisedButton:hover {
   background-color: white;
   color: #0d1973;
   border-color: #0d1973;
+}
+
+.raisedButton:hover a{
+  color: #0d1973;
+}
+
+.logo {
+  height: 7em;
+  margin-left: -40px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.tileStyle {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+h1 {
+  margin:0;
+  margin-bottom: 20px;
+  font-size: 1.5em
 }

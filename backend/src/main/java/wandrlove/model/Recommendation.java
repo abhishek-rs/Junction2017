@@ -1,39 +1,56 @@
 package wandrlove.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 public class Recommendation {
 
     private String id;
 
-    private String place;
+    private String location;
 
     private RecommendationType type;
 
-    private String icon;
+    private String activity;
 
-    private String reason;
+    private List<String> categories;
 
-    private String[] images;
+    private List<String> images;
 
     private Double price;
 
+    public Recommendation() {
+
+    }
+
     public Recommendation(String id) {
         this.id = id;
+    }
+
+    public Recommendation(
+            String location,
+            String type,
+            String activity,
+            List<String> categories,
+            List<String> images) {
+        this.id = UUID.randomUUID().toString();
+        this.location = location;
+        this.activity = activity;
+        this.categories = new ArrayList<>(categories);
+        this.images = new ArrayList<>(images);
     }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getLocation() {
+        return location;
     }
 
-    public String getPlace() {
-        return place;
-    }
-
-    public void setPlace(String place) {
-        this.place = place;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public RecommendationType getType() {
@@ -44,27 +61,27 @@ public class Recommendation {
         this.type = type;
     }
 
-    public String getIcon() {
-        return icon;
+    public String getActivity() {
+        return activity;
     }
 
-    public void setIcon(String icon) {
-        this.icon = icon;
+    public void setActivity(String activity) {
+        this.activity = activity;
     }
 
-    public String getReason() {
-        return reason;
+    public List<String> getCategories() {
+        return categories;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setCategories(List<String> categories) {
+        this.categories = categories;
     }
 
-    public String[] getImages() {
+    public List<String> getImages() {
         return images;
     }
 
-    public void setImages(String[] images) {
+    public void setImages(List<String> images) {
         this.images = images;
     }
 

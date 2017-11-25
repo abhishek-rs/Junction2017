@@ -2,9 +2,11 @@ package wandrlove.model;
 
 public enum RecommendationType {
 
-    EVENT,
+    place,
 
-    SPORTS,
+    event,
 
-    VISIT;
+    sports,
+
+    visit;
 }

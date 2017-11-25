@@ -9,31 +9,6 @@
   color: #0d1973;
 }
 
-#top-bar{
-  background: white;
-  position: fixed;
-  color: #0b1560;
-  width: 20%;
-  top: 10px;
-  left: 20px;
-  height: 80px;
-  padding: 10px;
-  z-index: 999;
-  text-align: center;
-}
-
-#top-bar h3{
-  margin: 10px;
-}
-
-#top-bar p{
-  margin: 0px;
-}
-
-#top-bar p img{
-  width: 60%;
-}
-
 .App-header {
   background-color: #222;
   height: 150px;

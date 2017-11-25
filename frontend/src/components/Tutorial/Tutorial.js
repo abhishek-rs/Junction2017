@@ -5,6 +5,7 @@ import InterestCheckbox from './InterestCheckbox';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import RaisedButton from 'material-ui/RaisedButton';
+import { Link } from 'react-router-dom'
 import './Tutorial.css';
 
 const styles = {
@@ -110,7 +111,8 @@ export default class Tutorial extends React.Component {
     return(
       <div style={styles.root} className="themeFont">
       <img className="logo" src={require('../../img/logo.png')} />
-      <p className="themeFont">Welcome to Wandrlove! Select items that you appreciate when you are traveling from pictures below, so we will make sure you will get the deals you like!</p>
+      <h1 align="center">Welcome to your Dream Travel Destinations! </h1>
+      <p align="center"> Select items that you appreciate while traveling from pictures below, so we will make sure you will get the deals you like!</p>
       <MuiThemeProvider>
       <div>
         <GridList
@@ -134,9 +136,10 @@ export default class Tutorial extends React.Component {
               <img src={require('../../img/interests/' + tile.img)} />
             </GridTile>))}
         </GridList>
-        <button className="raisedButton">I'm ready to see my map!</button>
+        <button className="raisedButton"><Link to="/">I'm ready to see my map!</Link></button>
         </div>
     </MuiThemeProvider>
+
   </div>
     )}
   }
