@@ -31,7 +31,7 @@ public class RecommendationService {
         try {
             JsonNode rootNode = objectMapper.readTree(file);
             JsonNode recommendationsNode = rootNode.get("recommendations");
-            String recommendationsContent = recommendationsNode.asText();
+            String recommendationsContent = recommendationsNode.toString();
             facebookUserRecommendations = objectMapper.readValue(
                     recommendationsContent,
                     new TypeReference<List<Recommendation>>(){});

@@ -1,5 +1,9 @@
 package wandrlove.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 public class Recommendation {
 
     private String id;
@@ -10,16 +14,31 @@ public class Recommendation {
 
     private String activity;
 
-    private String tag;
+    private List<String> categories;
 
-    private String[] categories;
-
-    private String[] images;
+    private List<String> images;
 
     private Double price;
 
+    public Recommendation() {
+
+    }
+
     public Recommendation(String id) {
         this.id = id;
+    }
+
+    public Recommendation(
+            String location,
+            String type,
+            String activity,
+            List<String> categories,
+            List<String> images) {
+        this.id = UUID.randomUUID().toString();
+        this.location = location;
+        this.activity = activity;
+        this.categories = new ArrayList<>(categories);
+        this.images = new ArrayList<>(images);
     }
 
     public String getId() {
@@ -50,27 +69,19 @@ public class Recommendation {
         this.activity = activity;
     }
 
-    public String getTag() {
-        return tag;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-
-    public String[] getCategories() {
+    public List<String> getCategories() {
         return categories;
     }
 
-    public void setCategories(String[] categories) {
+    public void setCategories(List<String> categories) {
         this.categories = categories;
     }
 
-    public String[] getImages() {
+    public List<String> getImages() {
         return images;
     }
 
-    public void setImages(String[] images) {
+    public void setImages(List<String> images) {
         this.images = images;
     }
 
