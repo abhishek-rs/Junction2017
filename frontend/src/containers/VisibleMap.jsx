@@ -1,6 +1,4 @@
-import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import * as userActions from "../actions/UserActions"
 import MapComponent from "../components/Map/MapComponent"
 
 const mapStateToProps = (state, ownProps) => {

@@ -88,14 +88,9 @@ const tilesData = [
   },
 ];
 
-
 export default class Tutorial extends React.Component {
   constructor(props){
     super(props);
-    this.interests = [];
-    this.state = {
-       interest_color: true
-    }
     this.updateInterests = this.updateInterests.bind(this);
   }
 
@@ -124,7 +119,7 @@ export default class Tutorial extends React.Component {
                 title={tile.title}
                 actionPosition="left"
                 actionIcon={
-                  <InterestCheckbox onClick={this.updateInterests()}/>
+                  <InterestCheckbox title={tile.title} onClick={this.updateInterests()}/>
                 }
                 titlePosition="bottom"
                 titleBackground="linear-gradient(to bottom, rgba(15,23,115,1) 0%,rgba(15,23,115,0.7) 70%,rgba(15,23,115,0.5) 100%)"
@@ -134,7 +129,7 @@ export default class Tutorial extends React.Component {
               </GridTile>))}
           </GridList>
           <div align="center">
-            <button className="raisedButton"><Link to="/">I'm ready to see my map!</Link></button>
+            <button onClick={this.props.onGridLoginClick} className="raisedButton"><Link to="/">I'm ready to see my map!</Link></button>
           </div>
           </div>
       </MuiThemeProvider>
