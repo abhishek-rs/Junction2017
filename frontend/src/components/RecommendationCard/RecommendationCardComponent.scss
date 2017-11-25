@@ -1,5 +1,81 @@
 .rec-card{
-    height: 100px;
-    width: 100px;
+    height: 350px;
+    width: 300px;
     background: white;
+    border-radius: 3px;
+    color: #0b1560;
+    font-size: 15px;
+    font-family: 'Raleway';
+    transition: visibility 2s, opacity 0.5s linear;
+    text-align: center;
+    -webkit-box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.67);
+    -moz-box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.67);
+    box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.67);
+
+    .rec-head{
+        background: #0b1560;
+        color: white;
+        width: 10   0%;
+        padding: 5px;
+        margin: 0;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .month{
+        margin-top: 5px;
+        color: #0b1560;
+    }
+
+    .why{
+        p{
+            margin: 5px;
+        }
+        .reasons{
+            background: #0b1560;
+            color: white;
+            padding: 5px;
+            margin: 3px;
+            width: 20%;
+            display: inline-block;
+            font-size: 12px;
+            border-radius: 5px;
+        }
+    }
+
+    .rec-images{
+        img{
+            height: 100px;
+            width: 100px;
+            margin: 5px;
+        }
+    }
+
+    .rec-price{
+        color: #0b1560;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .see-more{
+      background-color: #0b1560;
+      border-color: white;
+      color: white;
+      border-width: medium;
+      padding: 5px 24px 5px 24px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      margin-right: 8px;
+      margin-top: 0px;
+      margin-bottom: 3%;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .closeBtn{
+        background: transparent;
+        float: right;
+        margin-right: 5px;
+    }
+
 }
