@@ -37,6 +37,7 @@ export function userRecommendationsGrid(request) {
       dispatch(userRecommendationsSuccess(responseData));
     })
   }
+}
 
   export function userRecommendationsFb() {
     return dispatch => {
