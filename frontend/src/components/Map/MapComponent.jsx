@@ -16,48 +16,64 @@ const recommendations = [
     id: 1,
     lat: 59.955413,
     long: 10.337844,
+    activity: "Rock climbing",
+    location: "California",
     type: recommendationTypes[0],
-    reason: ['a','b'],
-    images: ['',''],
-    price: 500
+    categories: ['a','b'],
+    images: ['nyc.jpg','nyc.jpg'],
+    month: 3,
+    price: 500,
+    month: 'Jun'
   },
   {
     id: 2,
+    location: "New York",
     lat: 59.955413,
+    activity: "Rock climbing",
     long: 20.337844,
     type: recommendationTypes[1],
-    reason: ['a','b'],
-    images: ['',''],
-    price: 500
+    categories: ['a','b'],
+    images: ['nyc.jpg','nyc.jpg'],
+    month: 4, 
+    price: 500,
+    month: 'Jun'
   },
   {
     id: 3,
     lat: 59.955413,
     long: 30.337844,
+    activity: "Rock climbing",
+    location: "SunnyVale",
     type: recommendationTypes[2],
-    reason: ['a','b'],
-    images: ['',''],
-    price: 500
+    categories: ['a','b'],
+    images: ['nyc.jpg','nyc.jpg'],
+    price: 500,
+    month: 'Jun'
   },
   {
     id: 4,
     lat: 59.955413,
     long: 40.337844,
+    activity: "Rock climbing",
+    location: "Stockholm",
     type: recommendationTypes[3],
-    reason: ['a','b'],
-    images: ['',''],
-    price: 500
+    categories: ['a','b'],
+    images: ['nyc.jpg','nyc.jpg'],
+    price: 500,
+    month: 'Jun'
   },
   {
     id: 5,
     lat: 59.955413,
     long: 50.337844,
+    activity: "Rock climbing",
+    location: "Helsinki",
     type: recommendationTypes[4],
-    reason: ['a','b'],
-    images: ['',''],
-    price: 500
+    categories: ['a','b'],
+    images: ['nyc.jpg','nyc.jpg'],
+    price: 500,
+    month: 'Jun'
   },
-
 ]
 
 export default class MapComponent extends Component {
@@ -99,6 +115,7 @@ export default class MapComponent extends Component {
         lat={r.lat}
         lng={r.long}
         rec={r}
+        onCancelClick={this.handleClick}
         />
       );
     }
