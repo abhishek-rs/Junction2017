@@ -49,6 +49,7 @@ export default class MapComponent extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
     if(nextProps){
       this.setState({
         recommendations: nextProps.recommendations
@@ -84,7 +85,6 @@ export default class MapComponent extends Component {
       );
     }
 
-    console.log(this.state.icons, this.state.card);
     return (
       <div id="map-container">
         <GoogleMapReact
