@@ -97,6 +97,7 @@ export default class Tutorial extends React.Component {
   updateInterests(tile){
     console.log(tile);
     console.log("interests updated");
+    this.props.onInterestTileToggle(tile.title);
   }
 
   render(){
@@ -119,7 +120,7 @@ export default class Tutorial extends React.Component {
                 title={tile.title}
                 actionPosition="left"
                 actionIcon={
-                  <InterestCheckbox title={tile.title} onClick={this.updateInterests()}/>
+                  <InterestCheckbox onClick={this.updateInterests(tile)}/>
                 }
                 titlePosition="bottom"
                 titleBackground="linear-gradient(to bottom, rgba(15,23,115,1) 0%,rgba(15,23,115,0.7) 70%,rgba(15,23,115,0.5) 100%)"

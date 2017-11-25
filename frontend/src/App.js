@@ -11,13 +11,13 @@ export default class App extends Component {
   render() {
     return <div id="app">
       <BrowserRouter>
-        <Switch>
+        <div>
           <Route exact path='/dash' component={HomeComponent}/>
-          <Route path='/' component={VisibleLogin}/>
-          <Route path='/tutorial' component={VisibleTutorial}/>
-          <Route path='/recommendation_detail/:number' component={RecommendationDetailComponent}/>
+          <Route exact path='/' component={VisibleLogin}/>
+          <Route exact path='/tutorial' component={VisibleTutorial}/>
+          <Route exact path='/recommendation_detail/:number' component={RecommendationDetailComponent}/>
           <Route exact path='.' component={VisibleLogin}/>
-        </Switch>
+        </div>
       </BrowserRouter>
     </div>
   }
