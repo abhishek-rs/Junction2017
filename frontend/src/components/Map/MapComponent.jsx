@@ -15,7 +15,9 @@ export default class MapComponent extends Component {
     super(props);
     this.state = Object.assign({
       openRecId: null,
-      recs: []
+      icons: [],
+      recommendations: [],
+      card: null
     })
     this.handleClick = this.handleClick.bind(this);
     this.reRenderIcons = this.reRenderIcons.bind(this);
@@ -27,49 +29,36 @@ export default class MapComponent extends Component {
   }
 
   reRenderIcons(id){
-    let recs = [];
-    for (let r of this.state.recs){
+    let icons = [];
+    let card = null;
+    console.log(this.state.recommendations);
+    for (let r of this.state.recommendations){
       if(r.id !== id){
-        recs.push(
-          <RecommendationIconComponent
-          lat={r.lat}
-          lng={r.lon}
-          onIconClick={this.handleClick}
-          type={r.type}
-          key={r.id}
-          id={r.id}
-        />
+        icons.push(
+          r
         );
       }
     }
     if(id !== null){
-      let r = this.state.recs.filter( r => r.id === id)[0];
-      
-      recs.push(
-        <RecommendationCardComponent
-        lat={r.lat}
-        lng={r.lon}
-        rec={r}
-        onCancelClick={this.handleClick}
-        />
-      );
+      card = this.state.recommendations.filter( r => r.id === id)[0];
     }
     this.setState({
-      recs: recs
+      icons: icons,
+      card: card
     });
   }
 
   componentWillReceiveProps(nextProps) {
     if(nextProps){
       this.setState({
-        recs: nextProps.recommendations
-      }, this.reRenderIcons(null));
+        recommendations: nextProps.recommendations
+      }, () => this.reRenderIcons(null));
     }
   }
 
   render() {
     let recs = [];
-    for (let r of this.state.recs){
+    for (let r of this.state.icons){
         recs.push(
           <RecommendationIconComponent
           lat={r.lat}
@@ -81,6 +70,21 @@ export default class MapComponent extends Component {
         />
         );
     }
+    if( this.state.card != null){
+      recs.push(
+        <RecommendationCardComponent
+        lat={this.state.card.lat}
+        lng={this.state.card.lon}
+        onCancelClick={this.handleClick}
+        type={this.state.card.type}
+        key={this.state.card.id}
+        id={this.state.card.id}
+        rec={this.state.card}
+      />
+      );
+    }
+
+    console.log(this.state.icons, this.state.card);
     return (
       <div id="map-container">
       <div id="top-bar">

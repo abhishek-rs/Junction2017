@@ -17,7 +17,7 @@ export function userRecommendationsGrid(request) {
   return dispatch => {
     dispatch(userRecommendationsRequest());
 
-    fetch("http://travellove.mybluemix.net/api/recommendations/grid", {
+    fetch("https://adventuremap.mybluemix.net/api/recommendations/grid", {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ export function userRecommendationsFb() {
   return dispatch => {
     dispatch(userRecommendationsRequest());
 
-    fetch("http://travellove.mybluemix.net/api/recommendations/fb", {
+    fetch("https://adventuremap.mybluemix.net/api/recommendations/fb", {
       headers: {
         'Accept': 'application/json',
         // 'Content-Type': 'application/json'
