@@ -11,10 +11,21 @@ const rootReducer = (state = initialState, action) => {
       return Object.assign({}, state, { requestInProgress: false });
 
     case types.USER_RECOMMENDATIONS_SUCCESS:
-      console.log(action.response)
       return Object.assign({}, state, {
         requestInProgress: false,
         recommendations: action.response
+      });
+
+    case types.USER_INTEREST_TOGGLE:
+      let newInterests = state.interests.slice()
+      let indexOfInterest = state.interests.indexOf(action.interest)
+      if (indexOfInterest !== -1) {
+        newInterests.push(action.interest)
+      } else {
+        newInterests.splice(indexOfInterest, 1)
+      }
+      return Object.assign({}, state, {
+        interests: newInterests
       });
   }
 }
