@@ -11,6 +11,7 @@ const rootReducer = (state = initialState, action) => {
       return Object.assign({}, state, { requestInProgress: false });
 
     case types.USER_RECOMMENDATIONS_SUCCESS:
+      console.log(action.response)
       return Object.assign({}, state, {
         requestInProgress: false,
         recommendations: action.response

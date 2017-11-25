@@ -46,7 +46,7 @@ export function userRecommendationsFb() {
     fetch("http://travellove.mybluemix.net/api/recommendations/fb", {
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/json'
       },
       method: "GET"
     }).then((response) => {

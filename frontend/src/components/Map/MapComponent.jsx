@@ -123,11 +123,15 @@ export default class MapComponent extends Component {
     });
   }
 
-  componentWillMount(){
-    this.reRenderIcons(null);
+  componentDidMount() {
+    console.log(this.props.recommendations)
+    this.setState({
+      recs: this.props.recommendations
+    });
   }
 
   render() {
+    console.log(this.props.recommendations)
     return (
       <div id="map-container">
       <div id="top-bar">
