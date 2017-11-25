@@ -4,13 +4,16 @@ import './LoginComponent.css';
 export default class Login extends Component {
     render( ){
         return(
-           <div>
+           <div className="login-wrapper">
                <video className="background-video" loop muted autoPlay>
-                    <source src="/frontend/images/video.mp4" type="video/mp4" />
+                    <source src="video.mp4" type="video/mp4" />
                 </video>
-               <h1>
+                <div className = "welcome-div" >
+                <div className ="border" >
+                <h1 className = "app-title">Wandrlove</h1>
+               <h2>
                  Explore your inner adverturer with our personalised reccommendations
-               </h1>
+               </h2>
                 <h3>
                  Login with email
                 </h3>
@@ -21,10 +24,11 @@ export default class Login extends Component {
                      <div className="form-group">
                         <input type="password" className="form-control" placeholder="Password" />
                      </div>
-                     <button id="" type="submit" className="btn btn-success">Login</button>
+                     <button id="" type="submit" className="login-button">Login</button>
                 </form>
-                 <h3>Login with Facebook</h3>
                  <button id="" type="submit" className="facebook">Continue with Facebook</button>
+            </div>
+           </div>
            </div>
         )
     }
