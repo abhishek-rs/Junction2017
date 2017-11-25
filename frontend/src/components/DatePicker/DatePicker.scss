@@ -1,0 +1,57 @@
+.top-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 10px;
+    position: absolute;
+
+.white{
+    background-color: white;
+    z-index: 999;
+    position: fixed;
+    left: 20px;
+}
+.selected{
+    background-color: red;
+}
+#top-bar{
+    background: white;
+    color: #0b1560;
+    position: fixed;
+    left:0;
+    top:0;
+    width: 282px;
+    height: 100px;
+    padding-bottom: 20px;
+    z-index: 999;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    height: 100%;
+    width: 370px;
+    margin: auto;
+
+  h3{
+    margin: 10px;
+  }
+
+  h1{
+    font-size: 2.5em;
+  }
+  p{
+    margin: 0px;
+  }
+
+  p img{
+    width: 60%;
+  }
+
+}
+}
+.panelLogo {
+  height: 60px;
+  margin-left: -20px;
+}
+
+.finnair {
+  height: 20px;
+}
