@@ -10,77 +10,14 @@ const recommendationTypes = [
 const defaultZoom = 2;
 const defaultCenter = {lat: 37.9908164, lng: 23.6682993};
 
-const recommendations = [
-  {
-    id: 1,
-    lat: 59.955413,
-    long: 10.337844,
-    activity: "Rock climbing",
-    location: "California",
-    type: recommendationTypes[0],
-    categories: ['a','b'],
-    images: ['nyc.jpg','nyc.jpg'],
-    month: 3,
-    price: 500,
-    month: 'Jun'
-  },
-  {
-    id: 2,
-    location: "New York",
-    lat: 71.955413,
-    activity: "Rock climbing",
-    long: 20.337844,
-    type: recommendationTypes[1],
-    categories: ['a','b'],
-    images: ['nyc.jpg','nyc.jpg'],
-    month: 4,
-    price: 500,
-    month: 'Jun'
-  },
-  {
-    id: 3,
-    lat: 59.955413,
-    long: 30.337844,
-    activity: "Rock climbing",
-    location: "SunnyVale",
-    type: recommendationTypes[2],
-    categories: ['a','b'],
-    images: ['nyc.jpg','nyc.jpg'],
-    price: 500,
-    month: 'Jun'
-  },
-  {
-    id: 4,
-    lat: 30.955413,
-    long: 40.337844,
-    activity: "Rock climbing",
-    location: "Stockholm",
-    type: recommendationTypes[3],
-    categories: ['a','b'],
-    images: ['nyc.jpg','nyc.jpg'],
-    price: 500,
-    month: 'Jun'
-  },
-  {
-    id: 5,
-    lat: 20.955413,
-    long: 50.337844,
-    activity: "Rock climbing",
-    location: "Helsinki",
-    type: recommendationTypes[4],
-    categories: ['a','b'],
-    images: ['nyc.jpg','nyc.jpg'],
-    price: 500,
-    month: 'Jun'
-  },
-]
-
 export default class MapComponent extends Component {
   constructor(props){
     super(props);
     this.state = Object.assign({
       openRecId: null,
-      recs: []
+      icons: [],
+      recommendations: [],
+      card: null
     })
     this.handleClick = this.handleClick.bind(this);
     this.reRenderIcons = this.reRenderIcons.bind(this);
@@ -92,49 +29,69 @@ export default class MapComponent extends Component {
   }
 
   reRenderIcons(id){
-    let recs = [];
-    for (let r of recommendations){
+    let icons = [];
+    let card = null;
+    console.log(this.state.recommendations);
+    for (let r of this.state.recommendations){
       if(r.id !== id){
+        icons.push(
+          r
+        );
+      }
+    }
+    if(id !== null){
+      card = this.state.recommendations.filter( r => r.id === id)[0];
+    }
+    this.setState({
+      icons: icons,
+      card: card
+    });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    if(nextProps){
+      this.setState({
+        recommendations: nextProps.recommendations
+      }, () => this.reRenderIcons(null));
+    }
+  }
+
+  render() {
+    let recs = [];
+    for (let r of this.state.icons){
         recs.push(
           <RecommendationIconComponent
           lat={r.lat}
-          lng={r.long}
+          lng={r.lon}
           onIconClick={this.handleClick}
           type={r.type}
           key={r.id}
           id={r.id}
         />
         );
-      }
     }
-    if(id !== null){
-      let r = recommendations.filter( r => r.id === id)[0];
+    if( this.state.card != null){
       recs.push(
         <RecommendationCardComponent
-        lat={r.lat}
-        lng={r.long}
-        rec={r}
+        lat={this.state.card.lat}
+        lng={this.state.card.lon}
         onCancelClick={this.handleClick}
-        />
+        type={this.state.card.type}
+        key={this.state.card.id}
+        id={this.state.card.id}
+        rec={this.state.card}
+      />
       );
     }
-    this.setState({
-      recs: recs
-    });
-  }
 
-  componentWillMount(){
-    this.reRenderIcons(null);
-  }
-
-  render() {
     return (
       <div id="map-container">
         <GoogleMapReact
           defaultCenter={defaultCenter}
           defaultZoom={3}
         >
-          {this.state.recs !== [] ? this.state.recs: ""}
+          {recs !== [] ? recs : ""}
         </GoogleMapReact>
       </div>
     );

@@ -17,19 +17,19 @@ export default class RecommendationIconComponent extends Component {
     return (
         <div className="rec-icon" onClick={this.handleClick}>
             {
-            type === 'music' ? <div className='pin music'></div> : ''
+            type === 'event' ? <div className='pin music'></div> : ''
             }
             {
-            type === 'sport' ? <div className='pin sports'></div> : ''
+            type === 'sports' ? <div className='pin sports'></div> : ''
             }
             {
             type === 'likes' ? <div className='pin likes'></div> : ''
             }
             {
-            type === 'home' ? <div className='pin homes'></div> : ''
+            type === 'visit' ? <div className='pin homes'></div> : ''
             }
             {
-            type === 'travel' ? <div className='pin travel'></div> : ''
+            type === 'place' ? <div className='pin travel'></div> : ''
             }
             <div className='pulse'></div>
         </div>
