@@ -91,15 +91,17 @@
 
 .facebook{
     background: #4267b2;
-    border-radius: 24px;
+    border-radius: 10px;
     border-color: transparent;
     color: white;
     height: 40px;
     text-align: center;
     width: 250px;
     font-size: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Arial, Helvetica, sans-serif;
+    font-family: 'Raleway';
     margin-bottom: 1%;
+    margin-top: 10px;
+    margin-bottom: 30px;
     input:focus{
         outline:none;
       }
@@ -124,11 +126,11 @@
     color: white;
 }
 
-.loginButton:hover {
+/*.loginButton:hover {
   background-color: white;
   color: #0d1973;
   border-color: #0d1973;
-}
+}*/
 
 .loginButton:hover a{
   color: #0d1973;
@@ -145,14 +147,15 @@ h2, h3, p {
   color: #0d1973;
 }
 
-.fb-login-button {
-    margin-top: 10px;
-  margin-bottom: 30px;
-}
-
 .form-control {
   width: 240px !important;
   border-radius: 10px !important;
   height: 20px !important;
   font-size: 1em !important;
+}
+
+.btnIcon {
+  height:15px;
+  margin-right: 5px;
+  padding-top:5px;
 }

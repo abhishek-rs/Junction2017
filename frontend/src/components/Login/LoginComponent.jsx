@@ -30,8 +30,11 @@ export default class Login extends Component {
                           Login
                       </button>
                   </Link>
-                  <div id="fb-root"></div>
-                    <Link to="/"><div className="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div></Link>
+                  <div>
+                  <Link to="/">
+                          <button className="facebook"><img alt="fb" class="btnIcon" src={require("../../img/fb.png")}/><span>Login with Facebook</span></button>
+                  </Link>
+                  </div>
                 </form>
               </div>
           </div>
