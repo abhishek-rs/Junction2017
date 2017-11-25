@@ -7,5 +7,5 @@ export default class RecommendationDetailComponent extends Component {
             Recommendation detail
         </div>
       );
-  }
+    }
   }

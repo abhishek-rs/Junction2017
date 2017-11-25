@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Service;
 import wandrlove.model.Recommendation;
 
@@ -23,10 +25,23 @@ public class RecommendationService {
 
     private UserService userService;
 
+    @Autowired
+    private PathMatchingResourcePatternResolver resolver;
+
+    @Autowired
+    public RecommendationService(UserService userService) {
+        this.userService = userService;
+    }
+
     @PostConstruct
     private void initialize() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("data/data.json").getFile());
+        Resource resource = new ClassPathResource("classpath*:**/data.json");
+        File file = null;
+        try {
+            file = resource.getFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             JsonNode rootNode = objectMapper.readTree(file);
@@ -40,11 +55,6 @@ public class RecommendationService {
         }
 
         System.out.println(facebookUserRecommendations);
-    }
-
-    @Autowired
-    public RecommendationService(UserService userService) {
-        this.userService = userService;
     }
 
     public List<Recommendation> getRecommendationsForUser(String userId) {
