@@ -237,6 +237,41 @@
         "city_cologne_1.jpg",
         "city_cologne_2.jpg"
       ]
+    },
+    {
+      "location": "Hoi An, Vietnam",
+      "activity": "Visit New Place",
+      "type": "place",
+      "images": [
+        "place_hoi_an_1.jpg",
+        "place_hoi_an_2.jpg"
+      ]
+    },
+    {
+      "location": "San Antonio, Ecuador",
+      "activity": "Visit New Place",
+      "type": "place",
+      "images": [
+        "place_san_antonio_1.jpg"
+      ]
+    },
+    {
+      "location": "Quito, Ecuador",
+      "activity": "Visit New Place",
+      "type": "place",
+      "images": [
+        "place_quito_1.jpg",
+        "place_quito_2.jpg"
+      ]
+    },
+    {
+      "location": "Galapagos, Ecuador",
+      "activity": "Visit New Place",
+      "type": "place",
+      "images": [
+        "place_galapagos_1.jpg",
+        "place_galapagos_2.jpg"
+      ]
     }
   ]
 }
