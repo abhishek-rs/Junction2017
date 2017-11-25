@@ -7,7 +7,13 @@
 /coverage
 
 # production
-/build
+*/build
+*/node
+
+# visual studio code
+.settings
+.project
+.classpath
 
 # misc
 .DS_Store
@@ -15,6 +21,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+*/target
 
 npm-debug.log*
 yarn-debug.log*
