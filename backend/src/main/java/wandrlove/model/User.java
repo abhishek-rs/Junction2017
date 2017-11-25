@@ -22,6 +22,10 @@ public class User {
         this.userId = userId;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
     public String getHomePlace() {
         return homePlace;
     }
