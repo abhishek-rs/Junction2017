@@ -7,8 +7,8 @@ const recommendationTypes = [
   'likes', 'sport', 'home', 'travel', 'music'
 ];
 
-const defaultZoom = 11;
-const defaultCenter = {lat: 59.95, lng: 30.33};
+const defaultZoom = 2;
+const defaultCenter = {lat: 37.9908164, lng: 23.6682993};
 
 const recommendations = [
   {
@@ -27,13 +27,13 @@ const recommendations = [
   {
     id: 2,
     location: "New York",
-    lat: 59.955413,
+    lat: 71.955413,
     activity: "Rock climbing",
     long: 20.337844,
     type: recommendationTypes[1],
     categories: ['a','b'],
     images: ['nyc.jpg','nyc.jpg'],
-    month: 4, 
+    month: 4,
     price: 500,
     month: 'Jun'
   },
@@ -51,7 +51,7 @@ const recommendations = [
   },
   {
     id: 4,
-    lat: 59.955413,
+    lat: 30.955413,
     long: 40.337844,
     activity: "Rock climbing",
     location: "Stockholm",
@@ -63,7 +63,7 @@ const recommendations = [
   },
   {
     id: 5,
-    lat: 59.955413,
+    lat: 20.955413,
     long: 50.337844,
     activity: "Rock climbing",
     location: "Helsinki",
@@ -130,13 +130,9 @@ export default class MapComponent extends Component {
   render() {
     return (
       <div id="map-container">
-      <div id="top-bar">
-        <h3>WandrLove</h3>
-        <p>Powered by <img src="finnair.png" alt="finnair"/></p>
-      </div>
         <GoogleMapReact
           defaultCenter={defaultCenter}
-          defaultZoom={defaultZoom}
+          defaultZoom={3}
         >
           {this.state.recs !== [] ? this.state.recs: ""}
         </GoogleMapReact>
