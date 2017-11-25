@@ -25,14 +25,14 @@ export default class Login extends Component {
                      <div className="form-group">
                         <input type="password" className="form-control" placeholder="Password" />
                      </div>
-                     <Link to="/">
+                     <Link to="/Tutorial">
                     <button type="button" className="login-button">
                         Login
                     </button>
                 </Link>
                     
                  </form>
-                 <Link to="/">
+                 <Link to="/Tutorial">
                     <button type="button" className="facebook">
                         Continue with Facebook
                     </button>

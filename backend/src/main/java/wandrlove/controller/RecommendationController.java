@@ -26,7 +26,6 @@ public class RecommendationController {
     @GetMapping
     public List<Recommendation> getRecommendations(
             @RequestParam(value = "userId", defaultValue = "facebookUser") String userId) {
-
         return recommendationService.getRecommendationsForUser(userId);
     }
 }

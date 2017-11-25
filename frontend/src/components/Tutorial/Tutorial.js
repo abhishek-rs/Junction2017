@@ -1,24 +1,30 @@
 import React from "react";
 import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import InterestCheckbox from './InterestCheckbox';
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import RaisedButton from 'material-ui/RaisedButton';
+import { Link } from 'react-router-dom'
+import './Tutorial.css';
 
 const styles = {
   root: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    width: '80%',
+    margin: 'auto',
+    align:'center',
   },
   gridList: {
-    width: '90%',
+    width: '100%',
     height: '100%',
     overflowY: 'auto',
+    padding: 0,
   },
-  raisedButton: {
-    padding: '10px',
+  selected: {
+    backgroundColor: 'green'
   }
 };
 
@@ -34,10 +40,6 @@ const tilesData = [
   {
     img: 'bar.jpg',
     title: 'Bar',
-  },
-  {
-    img: 'ballet.jpeg',
-    title: 'Performances',
   },
   {
     img: 'beer.jpg',
@@ -72,6 +74,10 @@ const tilesData = [
     title: 'Fine dining',
   },
   {
+    img: 'surfing.jpeg',
+    title: 'Surfing',
+  },
+  {
     img: 'museum.jpeg',
     title: 'Museum',
   },
@@ -83,45 +89,57 @@ const tilesData = [
     img: 'sports.jpeg',
     title: 'Sports',
   },
-  {
-    img: 'surfing.jpeg',
-    title: 'Surfing',
-  },
 ];
 
-/**
- * A simple example of a scrollable `GridList` containing a [Subheader](/#/components/subheader).
- */
 
-const Tutorial = () => (
-  <div style={styles.root}>
-  <p>Welcome to Wandrlove! Select items that you appreciate when you are traveling from pictures below, so we will make sure you will get the deals you like!</p>
-  <MuiThemeProvider>
-  <GridList
-    cols={4}
-    cellHeight={200}
-    cellWidth={400}
-    padding={1}
-    style={styles.gridList}
-  >
-    {tilesData.map((tile) => (
-      <GridTile
-        key={tile.img}
-        title={tile.title}
-        actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-        actionPosition="left"
-        titlePosition="bottom"
-        titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-        cols={tile.featured ? 2 : 1}
-        rows={tile.featured ? 2 : 1}
-      >
-        <img src={require('../../img/interests/' + tile.img)} />
-      </GridTile>
-    ))}
-  </GridList>
-  <RaisedButton style={styles.raisedButton}>I'm happy with my choices, let's go</RaisedButton>
+export default class Tutorial extends React.Component {
+  constructor(props){
+    super(props);
+    this.interests = [];
+    this.state = {
+       interest_color: true
+    }
+    this.updateInterests = this.updateInterests.bind(this);
+  }
+
+  updateInterests(tile){
+    console.log(tile);
+    console.log("interests updated");
+  }
+
+  render(){
+    return(
+      <div style={styles.root} className="themeFont">
+      <img className="logo" src={require('../../img/logo.png')} />
+      <h1 align="center">Welcome to your Dream Travel Destinations! </h1>
+      <p align="center"> Select items that you appreciate while traveling from pictures below, so we will make sure you will get the deals you like!</p>
+      <MuiThemeProvider>
+      <div>
+        <GridList
+          cols={5}
+          cellHeight={200}
+          padding={1}
+          style={styles.gridList}
+        >
+          {tilesData.map((tile) => (
+            <GridTile
+              key={tile.img}
+              title={tile.title}
+              actionPosition="left"
+              actionIcon={
+                <InterestCheckbox onClick={this.updateInterests()}/>
+              }
+              titlePosition="bottom"
+              titleBackground="linear-gradient(to bottom, rgba(15,23,115,1) 0%,rgba(15,23,115,0.7) 70%,rgba(15,23,115,0.5) 100%)"
+              className="tileStyle"
+            >
+              <img src={require('../../img/interests/' + tile.img)} />
+            </GridTile>))}
+        </GridList>
+        <button className="raisedButton"><Link to="/">I'm ready to see my map!</Link></button>
+        </div>
     </MuiThemeProvider>
-  </div>
-);
 
-export default Tutorial;
+  </div>
+    )}
+  }
