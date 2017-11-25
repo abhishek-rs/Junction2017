@@ -12,6 +12,7 @@ const styles = {
   checkbox: {
     marginLeft: 16,
     color: 'white !important',
+    borderColor: 'red',
   },
 };
 
@@ -35,6 +36,7 @@ class InterestCheckbox extends React.Component {
           checkedIcon={<ActionFavorite />}
           uncheckedIcon={<ActionFavoriteBorder />}
           style={styles.checkbox}
+          labelStyle={{color: 'white'}} iconStyle={{fill: 'white'}}
         />
       </div>
     );

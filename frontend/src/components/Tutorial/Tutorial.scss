@@ -1,0 +1,17 @@
+.raisedButton {
+  padding: 10px;
+  background-color: #0d1973;
+  width: 100%;
+  color: white;
+  border-color: transparent;
+  font-size: 1.5em;
+  font-family: "Raleway";
+  margin-bottom: 30px;
+  height: 80px;
+}
+
+.raisedButton:hover {
+  background-color: white;
+  color: #0d1973;
+  border-color: #0d1973;
+}

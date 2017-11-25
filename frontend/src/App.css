@@ -4,6 +4,11 @@
   width: 100%;
 }
 
+.themeFont {
+  font-family: 'Raleway', sans-serif;
+  color: #0d1973;
+}
+
 #top-bar{
   background: white;
   position: fixed;
@@ -15,7 +20,6 @@
   padding: 10px;
   z-index: 999;
   text-align: center;
-  font-family: 'Raleway', sans-serif;
 }
 
 #top-bar h3{
@@ -28,11 +32,6 @@
 
 #top-bar p img{
   width: 60%;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
 }
 
 .App-header {
@@ -48,11 +47,6 @@
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 .title{
