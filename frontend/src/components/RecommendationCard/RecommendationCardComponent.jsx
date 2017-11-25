@@ -1,4 +1,4 @@
-import React, { Component } from 'react';    
+import React, { Component } from 'react';
 import './RecommendationCardComponent.css';
 
 export default class RecommendationCardComponent extends Component {
@@ -10,7 +10,7 @@ export default class RecommendationCardComponent extends Component {
     handleClick(){
         this.props.onCancelClick(null);
     }
-    
+
     render() {
       let rec = this.props.rec;
       let reasons = [];
@@ -27,13 +27,12 @@ export default class RecommendationCardComponent extends Component {
       }
       return (
         <div className="rec-card">
-            <div className="rec-head">{rec.activity} at {rec.location}</div>
-            <div className="month">In the month of {rec.month}</div>
-            <div className="why"><p>Why are we sending you here?</p> {reasons}</div>     
+            <div className="rec-head">{rec.location} <span><a className="closeBtn" onClick={this.handleClick}>X</a></span></div>
+            <p>{rec.activity}</p>
             <div className="rec-images">{images}</div>
-            <div className="rec-price">&euro; {rec.price}</div>
-            <span><a className="see-more" href="/">See more</a></span>
-            <span><a className="see-more cancel" onClick={this.handleClick}>Cancel</a></span>
+            <div>Estimated Price in <span className="month">{rec.month}</span></div>
+            <div className="rec-price"> &euro; {rec.price}</div>
+            <span><a className="see-more" href="https://www.finnair.com/fi/gb/bookings">Book now</a></span>
         </div>
       );
     }
