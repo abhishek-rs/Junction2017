@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './LoginComponent.css';
+import { Route, BrowserRouter, Link, Redirect, Switch } from 'react-router-dom'
 
 export default class Login extends Component {
     render( ){
@@ -24,9 +25,18 @@ export default class Login extends Component {
                      <div className="form-group">
                         <input type="password" className="form-control" placeholder="Password" />
                      </div>
-                     <button id="" type="submit" className="login-button">Login</button>
-                </form>
-                 <button id="" type="submit" className="facebook">Continue with Facebook</button>
+                     <Link to="/">
+                    <button type="button" className="login-button">
+                        Login
+                    </button>
+                </Link>
+                    
+                 </form>
+                 <Link to="/">
+                    <button type="button" className="facebook">
+                        Continue with Facebook
+                    </button>
+                </Link>
             </div>
            </div>
            </div>
