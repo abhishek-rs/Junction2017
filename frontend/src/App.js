@@ -11,6 +11,7 @@ import Toolbar from 'material-ui/Toolbar';
 import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Tutorial from './components/Tutorial/Tutorial';
 
 const styles = theme => ({
   root: {
@@ -30,14 +31,11 @@ export default class App extends Component {
  
   render() {
     return <div id="app">
-      <div id="top-bar">
-        <h3>WandrLove</h3>
-        <p>Powered by <img src="finnair.png"/></p>
-      </div>
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={HomeComponent}/>
           <Route path='/login' component={LoginComponent}/>
+          <Route path='/tutorial' component={Tutorial}/>
           <Route path='/recommendation_detail/:number' component={RecommendationDetailComponent}/>
           <Route exact path='' component={HomeComponent}/>
         </Switch>

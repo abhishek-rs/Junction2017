@@ -2,7 +2,7 @@ package wandrlove.model;
 
 public class Recommendation {
 
-    private Long id;
+    private String id;
 
     private String place;
 
@@ -16,15 +16,15 @@ public class Recommendation {
 
     private Double price;
 
-    public Recommendation(Long id) {
+    public Recommendation(String id) {
         this.id = id;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
