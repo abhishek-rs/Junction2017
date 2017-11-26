@@ -61,6 +61,8 @@ router.post('/recommendations/grid', function(req, res) {
   async.forEach(recommendation_city_sample, function(item, callback) {
     console.log(item); // print the key
     var category = _.sample(categories)
+    console.log(category);
+    console.log(category_map[category]);
     var new_rec = {
       id: chance.guid({version: 4}),
       location: item.city + ", " + item.country,
