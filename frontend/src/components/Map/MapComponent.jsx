@@ -31,7 +31,7 @@ export default class MapComponent extends Component {
   }
 
   handleCancel(id){
-    this.swapIcon(id);
+    this.returnIcon(id);
   }
 
   swapIcon(id){
@@ -49,8 +49,8 @@ export default class MapComponent extends Component {
     });  
   }
 
-  returnIcon(r){
-    let currentIconState = this.state.icons;
+returnIcon(r){
+    let currentIconState = this.state.recommendations;
     let card = null;
     currentIconState.push(this.state.card);
     this.setState({

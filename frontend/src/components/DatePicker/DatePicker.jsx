@@ -6,7 +6,7 @@ import './DatePicker.css';
 export default class DatePick extends Component {
   render() {
     return (
-      <div className = "top-wrapper">
+      <div className="top-wrapper">
         <div id="top-bar">
         <div><img alt="logo" align="center" className="panelLogo" src={require('../../img/logo.png')} /></div>
           <p>Powered by <img className="finnair" src="finnair.png"/></p>

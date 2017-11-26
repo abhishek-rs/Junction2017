@@ -16,6 +16,21 @@ const styles = {
   },
 };
 
+const months = {
+    1: 'January',
+    2: 'February',
+    3: 'March',
+    4: 'April',
+    5: 'May',
+    6: 'June',
+    7: 'July',
+    8: 'August',
+    9: 'September',
+    10: 'October',
+    11: 'November',
+    12: 'December'
+}
+
 export default class RecommendationCardComponent extends Component {
     constructor(props){
         super(props);
@@ -42,7 +57,7 @@ export default class RecommendationCardComponent extends Component {
         );
       }
 
-      let URLLink="https://beta.finnair.com/fi-fi/booking/flight-selection?origin=HEL&destination=" + rec.iata + "&cabin=ECONOMY&adults=1&children=0&infants=0&departureDate=2018-01-01&returnDate=2018-15-01";
+      let URLLink="https://beta.finnair.com/fi-fi/booking/flight-selection?origin=HEL&destination=" + rec.iata + "&cabin=ECONOMY&adults=1&children=0&infants=0&departureDate=2018-01-02&returnDate=2018-01-15";
 
       return (
 
@@ -50,7 +65,7 @@ export default class RecommendationCardComponent extends Component {
             <div className="rec-head">{rec.location} <span><a className="closeBtn" onClick={this.handleClick}>X</a></span></div>
             <p>{rec.activity}</p>
             <div className="rec-images">{images}</div>
-            <div>Estimated Price in <span className="month">{rec.month}</span></div>
+            <div>Estimated Price in <span className="month">{months[rec.month]}</span></div>
             <div className="rec-price"> &euro; {rec.price}</div>
             <MuiThemeProvider>
             <div className="favorite">
