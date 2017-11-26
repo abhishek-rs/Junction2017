@@ -3,6 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import './MapComponent.css';
 import RecommendationIconComponent from '../RecommendationIcon/RecommendationIconComponent'
 import RecommendationCardComponent from '../RecommendationCard/RecommendationCardComponent'
+import LeftBar from '../LeftBar/LeftBar'
 const recommendationTypes = [
   'likes', 'sport', 'home', 'travel', 'music'
 ];
@@ -17,13 +18,16 @@ export default class MapComponent extends Component {
       openRecId: null,
       icons: [],
       recommendations: [],
-      card: null
+      card: null,
+      month: 0,
+      open: false
     })
     this.handleClick = this.handleClick.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.swapIcon = this.swapIcon.bind(this);
     this.returnIcon = this.returnIcon.bind(this);
     this.renderIcons = this.renderIcons.bind(this);
+    this.handleMonth = this.handleMonth.bind(this);
   }
 
   handleClick(id){
@@ -35,7 +39,7 @@ export default class MapComponent extends Component {
   }
 
   swapIcon(id){
-    let currentIconState = this.state.recommendations;
+    let currentIconState = this.state.icons;
     let card = this.state.recommendations.filter( r => r.id === id)[0];
     let prevCard = this.state.card;
     if(prevCard != null){
@@ -45,18 +49,44 @@ export default class MapComponent extends Component {
     currentIconState.splice(index, 1);
     this.setState({
       icons: currentIconState,
-      card: card
+      card: card,
+      open: true
     });  
   }
 
 returnIcon(r){
-    let currentIconState = this.state.recommendations;
+    let currentIconState = this.state.icons;
     let card = null;
     currentIconState.push(this.state.card);
     this.setState({
       icons: currentIconState,
-      card: card
+      card: card,
+      open: false
     });    
+  }
+
+  handleMonth(value){
+    if(this.state.open){
+      this.returnIcon(this.state.card);
+    }
+    let icons = [];
+    if(value == 0) {
+      this.renderIcons();
+    }
+    else{
+      for (let r of this.state.recommendations){
+        if(r.month == value){  
+          icons.push(
+            r
+          );
+        }
+      }
+  
+      this.setState({
+        icons: icons
+      });
+    }
+
   }
 
   renderIcons(){
@@ -103,6 +133,7 @@ returnIcon(r){
 
   render() {
     let recs = [];
+    console.log(this.state.month);
     console.log(this.state.icons);
     for (let r of this.state.icons){
         recs.push(
@@ -138,6 +169,7 @@ returnIcon(r){
         >
           {recs !== [] ? recs : ""}
         </GoogleMapReact>
+        <LeftBar month={this.state.month} handleMonth={this.handleMonth}/>
       </div>
     );
   }

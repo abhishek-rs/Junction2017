@@ -12,6 +12,7 @@ export default class Login extends Component {
                 <div className = "welcome-div" >
                 <div className ="border">
                   <img className="logo" alt="logo" src={require('../../img/logo.png')} />
+                  <p>Powered by <img className="finnair" src="finnair.png"/></p>
                  <h2>
                    Explore your inner adventurer with personalised recommendations
                  </h2>

@@ -29,7 +29,7 @@ export default class RecommendationIconComponent extends Component {
             type === 'visit' ? <div className='pin homes'></div> : ''
             }
             {
-            type === 'place' ? <div className='pin travel'></div> : ''
+            type === 'place' || type == 'travel' ? <div className='pin travel'></div> : ''
             }
             <div className='pulse'></div>
         </div>

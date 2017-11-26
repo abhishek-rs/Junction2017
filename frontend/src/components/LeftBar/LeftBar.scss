@@ -33,6 +33,13 @@
     margin: auto;
     align-self: center;
 
+    .month-slider{
+      width: 90%;
+      margin: auto;
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
+
   h3{
     margin: 10px;
   }
@@ -61,4 +68,13 @@
 
 .statTile {
   margin-top: 10px;
+}
+
+.rangeslider__handle-label{
+  bottom: 18px;
+  position: relative;
+}
+
+.stats{
+  margin-top: 30px;
 }
