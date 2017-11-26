@@ -38,8 +38,8 @@ router.get('/recommendations/fb', function(req, res) {
       max: 12
     });
     item['price'] = chance.integer({
-      min: 200,
-      max: 1000
+      min: 50,
+      max: 600
     });
     recommendations_new.push(item)
   });
