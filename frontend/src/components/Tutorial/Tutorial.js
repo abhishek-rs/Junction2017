@@ -91,7 +91,6 @@ const tilesData = [
 export default class Tutorial extends React.Component {
   constructor(props){
     super(props);
-    this.updateInterests = this.updateInterests.bind(this);
   }
 
   generateTiles = () => {
@@ -101,8 +100,7 @@ export default class Tutorial extends React.Component {
           title={tile.title}
           actionPosition="left"
           actionIcon={
-            <InterestCheckbox onCheck={(tile) => {
-              console.log(tile)
+            <InterestCheckbox title={tile.title} onCheck={(tile) => {
               this.props.onInterestTileToggle(tile)}}/>
           }
           titlePosition="bottom"
@@ -112,12 +110,6 @@ export default class Tutorial extends React.Component {
           <img alt="" src={require('../../img/interests/' + tile.img)} />
         </GridTile>))
     return tiles;
-  }
-
-  updateInterests(tile){
-    console.log(tile);
-    console.log("interests updated");
-    this.props.onInterestTileToggle(tile.title);
   }
 
   render() {
@@ -136,7 +128,7 @@ export default class Tutorial extends React.Component {
             {this.generateTiles()}
           </GridList>
           <div align="center">
-            <button onClick={this.props.onGridLoginClick} className="raisedButton"><Link to="/dash">I'm ready to see my map!</Link></button>
+            <button onClick={this.props.onLoginClick} className="raisedButton"><Link to="/dash">I'm ready to see my map!</Link></button>
           </div>
           </div>
       </MuiThemeProvider>

@@ -14,11 +14,20 @@ const styles = {
 };
 
 class InterestCheckbox extends React.Component {
+constructor(props){
+  super(props);
+  this.handleCheck = this.handleCheck.bind(this)
+}
+
+  handleCheck(){
+    this.props.onCheck(this.props.title);
+  }
 
   render() {
     return (
       <div style={styles.block}>
         <Checkbox
+          onCheck={this.handleCheck}
           checkedIcon={<ActionFavorite />}
           uncheckedIcon={<ActionFavoriteBorder />}
           style={styles.checkbox}

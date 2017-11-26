@@ -14,16 +14,16 @@ export function userRecommendationsError() {
 }
 
 export function userRecommendationsGrid(request) {
+  console.log(request)
   return dispatch => {
     dispatch(userRecommendationsRequest());
 
     fetch("https://adventuremap.mybluemix.net/api/recommendations/grid", {
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Accept': 'application/json'
       },
       method: "POST",
-      body: JSON.stringify(request)
+      body: JSON.stringify({'categories' : request})
     }).then((response) => {
       if (response.status >= 200 && response.status < 300) {
         return response.json();

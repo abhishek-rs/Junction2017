@@ -27,14 +27,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 const mergeProps = (stateProps, dispatchProps) => {
     return {
         ...stateProps,
-        onGridLoginClick: () => {
+        ...dispatchProps,
+        onLoginClick: (event) => {
             console.log(stateProps.interests)
             dispatchProps.onGridLoginClick(stateProps.interests)
-        },
-        onInterestTileToggle: dispatchProps.onInterestTileToggle
+        }
     }
 }
 
-const VisibleTutorial = connect(mapStateToProps, mapDispatchToProps)(Tutorial)
+const VisibleTutorial = connect(mapStateToProps, mapDispatchToProps, mergeProps)(Tutorial)
 
 export default VisibleTutorial

@@ -19,7 +19,9 @@ const rootReducer = (state = initialState, action) => {
     case types.USER_INTEREST_TOGGLE:
       let newInterests = state.interests.slice()
       let indexOfInterest = state.interests.indexOf(action.interest)
-      if (indexOfInterest !== -1) {
+
+      if (indexOfInterest === -1) {
+        console.log("Element not present: " + action.interest)
         newInterests.push(action.interest)
       } else {
         newInterests.splice(indexOfInterest, 1)
