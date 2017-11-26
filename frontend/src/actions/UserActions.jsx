@@ -20,7 +20,7 @@ export function userRecommendationsGrid(request) {
 
     fetch("https://adventuremap.mybluemix.net/api/recommendations/grid", {
       headers: {
-        'content-type': 'application/json'
+        'Content-Type': 'application/json'
       },
       method: "POST",
       body: JSON.stringify({'categories' : request})
@@ -45,7 +45,7 @@ export function userRecommendationsFb() {
 
     fetch("https://adventuremap.mybluemix.net/api/recommendations/fb", {
       headers: {
-        'Accept': 'application/json'
+        'Content-Type': 'application/json'
       },
       method: "GET"
     }).then((response) => {
