@@ -19,7 +19,8 @@ export default class MapComponent extends Component {
       icons: [],
       recommendations: [],
       card: null,
-      month: 0
+      month: 0,
+      open: false
     })
     this.handleClick = this.handleClick.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
@@ -38,7 +39,7 @@ export default class MapComponent extends Component {
   }
 
   swapIcon(id){
-    let currentIconState = this.state.recommendations;
+    let currentIconState = this.state.icons;
     let card = this.state.recommendations.filter( r => r.id === id)[0];
     let prevCard = this.state.card;
     if(prevCard != null){
@@ -48,21 +49,26 @@ export default class MapComponent extends Component {
     currentIconState.splice(index, 1);
     this.setState({
       icons: currentIconState,
-      card: card
+      card: card,
+      open: true
     });  
   }
 
 returnIcon(r){
-    let currentIconState = this.state.recommendations;
+    let currentIconState = this.state.icons;
     let card = null;
     currentIconState.push(this.state.card);
     this.setState({
       icons: currentIconState,
-      card: card
+      card: card,
+      open: false
     });    
   }
 
   handleMonth(value){
+    if(this.state.open){
+      this.returnIcon(this.state.card);
+    }
     let icons = [];
     if(value == 0) {
       this.renderIcons();
