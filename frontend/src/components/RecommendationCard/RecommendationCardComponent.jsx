@@ -86,8 +86,8 @@ export default class RecommendationCardComponent extends Component {
                   onClick={this.deleteRecommendation}
                   />
             </div>
-            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"><img alt="fb" className="btnIcon" src={require("../../img/fb.png")}/>Share</a></div>
-            </MuiThemeProvider>
+            <div class="fb-share-button" data-href="https://adventuremap-frontend.mybluemix.net/" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadventuremap-frontend.mybluemix.net%2F&amp;src=sdkpreparse"><img alt="fb" className="btnIcon" src={require("../../img/fb.png")}/>Share</a></div>
+          </MuiThemeProvider>
         </div>
       );
     }
