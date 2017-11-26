@@ -39,7 +39,7 @@ router.get('/recommendations/fb', function(req, res) {
     });
     item['price'] = chance.integer({
       min: 50,
-      max: 600
+      max: 200
     });
     recommendations_new.push(item)
   });
