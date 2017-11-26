@@ -20,18 +20,62 @@ export default class MapComponent extends Component {
       card: null
     })
     this.handleClick = this.handleClick.bind(this);
-    this.reRenderIcons = this.reRenderIcons.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
+    this.swapIcon = this.swapIcon.bind(this);
+    this.returnIcon = this.returnIcon.bind(this);
+    this.renderIcons = this.renderIcons.bind(this);
   }
 
   handleClick(id){
-    console.log(id);
-    this.reRenderIcons(id);
+    this.swapIcon(id);
   }
 
-  reRenderIcons(id){
-    let icons = [];
+  handleCancel(id){
+    this.swapIcon(id);
+  }
+
+  swapIcon(id){
+    let currentIconState = this.state.recommendations;
+    let card = this.state.recommendations.filter( r => r.id === id)[0];
+    let prevCard = this.state.card;
+    if(prevCard != null){
+      currentIconState.push(prevCard);
+    }
+    let index = currentIconState.indexOf(card);
+    currentIconState.splice(index, 1);
+    this.setState({
+      icons: currentIconState,
+      card: card
+    });  
+  }
+
+  returnIcon(r){
+    let currentIconState = this.state.icons;
     let card = null;
-    console.log(this.state.recommendations);
+    currentIconState.push(this.state.card);
+    this.setState({
+      icons: currentIconState,
+      card: card
+    });    
+  }
+
+  renderIcons(){
+    let icons = this.state.icons;
+    for (let r of this.state.recommendations){
+      
+        icons.push(
+          r
+        );
+      
+    }
+    this.setState({
+      icons: icons
+    });
+  }
+  /*
+  reRenderIcons(id){
+    let icons = this.state.icons;
+    let card = this.state.card;
     for (let r of this.state.recommendations){
       if(r.id !== id){
         icons.push(
@@ -47,18 +91,19 @@ export default class MapComponent extends Component {
       card: card
     });
   }
-
+  */
   componentWillReceiveProps(nextProps) {
     console.log(nextProps);
     if(nextProps){
       this.setState({
         recommendations: nextProps.recommendations
-      }, () => this.reRenderIcons(null));
+      }, () => this.renderIcons());
     }
   }
 
   render() {
     let recs = [];
+    console.log(this.state.icons);
     for (let r of this.state.icons){
         recs.push(
           <RecommendationIconComponent
@@ -76,7 +121,7 @@ export default class MapComponent extends Component {
         <RecommendationCardComponent
         lat={this.state.card.lat}
         lng={this.state.card.lon}
-        onCancelClick={this.handleClick}
+        onCancelClick={this.handleCancel}
         type={this.state.card.type}
         key={this.state.card.id}
         id={this.state.card.id}

@@ -24,7 +24,7 @@ export default class RecommendationCardComponent extends Component {
     }
 
     handleClick(){
-        this.props.onCancelClick(null);
+        this.props.onCancelClick(this.props.rec);
     }
 
     deleteRecommendation(hello){
@@ -35,18 +35,14 @@ export default class RecommendationCardComponent extends Component {
       let rec = this.props.rec;
       let reasons = [];
       let images = [];
-      for (let r of rec.categories){
-          reasons.push(
-              <div className="reasons">{r}</div>
-          );
-      }
+      
       for (let image of rec.images){
           images.push(
             <img src={"https://adventuremap.mybluemix.net/images/" + image.toLowerCase()} />
         );
       }
 
-      let URLLink="https://beta.finnair.com/fi-fi/booking/flight-selection?origin=HEL&destination=" + rec.iata + "&cabin=ECONOMY&adults=1&children=0&infants=0&departureDate=2018-01-02&returnDate=2018-02-01";
+      let URLLink="https://beta.finnair.com/fi-fi/booking/flight-selection?origin=HEL&destination=" + rec.iata + "&cabin=ECONOMY&adults=1&children=0&infants=0&departureDate=2018-01-01&returnDate=2018-15-01";
 
       return (
 
@@ -56,7 +52,6 @@ export default class RecommendationCardComponent extends Component {
             <div className="rec-images">{images}</div>
             <div>Estimated Price in <span className="month">{rec.month}</span></div>
             <div className="rec-price"> &euro; {rec.price}</div>
-            <span><a className="see-more" target="_blank" href="https://www.finnair.com/fi/gb/bookings">Book now</a></span>
             <MuiThemeProvider>
             <div className="favorite">
               <Checkbox
@@ -76,7 +71,7 @@ export default class RecommendationCardComponent extends Component {
                   />
             </div>
             </MuiThemeProvider>
-            <span><a className="see-more" href={URLLink}>Book now</a></span>
+            <span><a target="_blank" className="see-more" href={URLLink}>Book now</a></span>
         </div>
       );
     }

@@ -19,6 +19,6 @@ export default class App extends Component {
           <Route exact path='.' component={VisibleLogin}/>
         </Switch>
       </BrowserRouter>
-    </div>
+  </div>
   }
 }
