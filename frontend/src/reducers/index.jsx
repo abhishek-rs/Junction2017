@@ -27,6 +27,9 @@ const rootReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         interests: newInterests
       });
+      
+      default:
+        return state;
   }
 }
 
