@@ -15,7 +15,7 @@
     background-color: red;
 }
 #top-bar{
-    background: white;
+    background: rgba(255,255,255,0.9);
     color: #0b1560;
     position: fixed;
     left:0;
@@ -48,10 +48,10 @@
 }
 }
 .panelLogo {
-  height: 60px;
-  margin-left: -20px;
+  height: 80px;
 }
 
 .finnair {
-  height: 20px;
+  height: 10px;
+  width: 80px !important;
 }
