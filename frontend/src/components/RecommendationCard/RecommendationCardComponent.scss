@@ -88,4 +88,27 @@
       margin-bottom:20px;
     }
 
+    .fb-share-button{
+        background: #4267b2;
+        border-radius: 10px;
+        border-color: transparent;
+        height: 30px;
+        text-align: center;
+        width: 80px;
+        font-size: 1em;
+        font-family: 'Raleway';
+        margin:auto;
+        margin-top: -10px;
+        text-decoration: none !important;
+        margin-bottom: 30px;
+        input:focus{
+            outline:none;
+          }
+    }
+
+    .fb-share-button a{
+      color: white;
+      text-decoration: none;
+    }
+
 }

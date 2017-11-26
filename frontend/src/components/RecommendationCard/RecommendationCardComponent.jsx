@@ -50,7 +50,7 @@ export default class RecommendationCardComponent extends Component {
       let rec = this.props.rec;
       let reasons = [];
       let images = [];
-      
+
       for (let image of rec.images){
           images.push(
             <img src={"https://adventuremap.mybluemix.net/images/" + image.toLowerCase()} />
@@ -65,8 +65,9 @@ export default class RecommendationCardComponent extends Component {
             <div className="rec-head">{rec.location} <span><a className="closeBtn" onClick={this.handleClick}>X</a></span></div>
             <p>{rec.activity}</p>
             <div className="rec-images">{images}</div>
-            <div>Estimated Price in <span className="month">{months[rec.month]}</span></div>
+            <div>Flights in <span className="month">{months[rec.month]}</span></div>
             <div className="rec-price"> &euro; {rec.price}</div>
+            <span><a target="_blank" className="see-more" href={URLLink}>Book now</a></span>
             <MuiThemeProvider>
             <div className="favorite">
               <Checkbox
@@ -85,8 +86,8 @@ export default class RecommendationCardComponent extends Component {
                   onClick={this.deleteRecommendation}
                   />
             </div>
+            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"><img alt="fb" className="btnIcon" src={require("../../img/fb.png")}/>Share</a></div>
             </MuiThemeProvider>
-            <span><a target="_blank" className="see-more" href={URLLink}>Book now</a></span>
         </div>
       );
     }

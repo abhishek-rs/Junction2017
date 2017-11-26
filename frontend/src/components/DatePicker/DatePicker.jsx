@@ -20,7 +20,11 @@ export default class DatePick extends Component {
           <h1>3122</h1>
           <p>Adventure points</p>
             </div>
+            <div className="statTile">
+        <h1>12</h1>
+        <p>Places on Bucket List</p>
          </div>
+        </div>
         </div>
         </div>
     );
