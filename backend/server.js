@@ -52,17 +52,18 @@ router.get('/airports', function(req, res) {
 });
 
 var category_map = require('./data/category_map')
+var activity_map = require('./data/activity_map')
 router.post('/recommendations/grid', function(req, res) {
   var recommendations = []
   var categories = req.body.categories
-  console.log(req.body);
   recommendation_city_sample = _.sampleSize(airports, 40);
 
   async.forEach(recommendation_city_sample, function(item, callback) {
-    console.log(item); // print the key
     var category = _.sample(categories)
-    console.log(category);
-    console.log(category_map[category]);
+    var type = category_map[category]
+    var activity = activity_map[category]
+    console.log(type);
+    console.log(activity);
     var new_rec = {
       id: chance.guid({version: 4}),
       location: item.city + ", " + item.country,
@@ -70,8 +71,8 @@ router.post('/recommendations/grid', function(req, res) {
       lon: item.lon,
       images: [item.locationCode + ".jpg"],
       iata: item.locationCode,
-      type: category_map[category],
-      activity: category,
+      type: type,
+      activity: activity,
       categories: [category],
       month: chance.integer({
         min: 1,
@@ -101,10 +102,8 @@ router.post('/recommendations/grid', function(req, res) {
       var price = _.find(result.prices, function(o) {
         return o.noFlight === false;
       });
-      console.log(body);
       if (price != undefined) {
         new_rec['price'] = price.price
-        console.log(price);
         recommendations.push(new_rec)
         callback();
       } else {
