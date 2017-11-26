@@ -45,8 +45,7 @@ export function userRecommendationsFb() {
 
     fetch("https://adventuremap.mybluemix.net/api/recommendations/fb", {
       headers: {
-        'Accept': 'application/json',
-        // 'Content-Type': 'application/json'
+        'Accept': 'application/json'
       },
       method: "GET"
     }).then((response) => {
@@ -64,5 +63,8 @@ export function userRecommendationsFb() {
   }
 }
 
+export function userInterestToggle(interest) {
+  return { type: types.USER_INTEREST_TOGGLE, interest }
+}
 
 /** End of user recommendations handling. */
