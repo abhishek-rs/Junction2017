@@ -19,7 +19,7 @@ export default class MapComponent extends Component {
       icons: [],
       recommendations: [],
       card: null,
-      month: 1
+      month: 0
     })
     this.handleClick = this.handleClick.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
