@@ -1,11 +1,15 @@
 import { connect } from 'react-redux'
 import * as userActions from "../actions/UserActions"
 import Tutorial from "../components/Tutorial/Tutorial"
+import React from "react";
+import InterestCheckbox from '../components/Tutorial/InterestCheckbox';
+import {GridList, GridTile} from 'material-ui/GridList';
 
 const mapStateToProps = (state, ownProps) => {
     console.log(state)
     return {
-        interests: state.interests
+        interests: state.interests,
+        tilesData: state.tilesData
     }
 }
 
@@ -20,17 +24,17 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-const mergeProps = (stateProps, dispatchProps, ownProps) => {
+const mergeProps = (stateProps, dispatchProps) => {
     return {
+        ...stateProps,
         onGridLoginClick: () => {
-            dispatchProps.onGridLoginClick(stateProps.interests)  
+            console.log(stateProps.interests)
+            dispatchProps.onGridLoginClick(stateProps.interests)
         },
-        onInterestTileToggle: (interest) => {
-            dispatchProps.onInterestTileToggle(interest)
-        }
+        onInterestTileToggle: dispatchProps.onInterestTileToggle
     }
 }
 
-const VisibleTutorial = connect(mapStateToProps, mapDispatchToProps, mergeProps)(Tutorial)
+const VisibleTutorial = connect(mapStateToProps, mapDispatchToProps)(Tutorial)
 
 export default VisibleTutorial

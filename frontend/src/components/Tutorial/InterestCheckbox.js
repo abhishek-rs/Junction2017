@@ -14,17 +14,6 @@ const styles = {
 };
 
 class InterestCheckbox extends React.Component {
-  state = {
-    checked: false,
-  }
-
-  updateCheck() {
-    this.setState((oldState) => {
-      return {
-        checked: !oldState.checked,
-      };
-    });
-  }
 
   render() {
     return (

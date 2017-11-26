@@ -94,13 +94,33 @@ export default class Tutorial extends React.Component {
     this.updateInterests = this.updateInterests.bind(this);
   }
 
+  generateTiles = () => {
+    let tiles = this.props.tilesData.map((tile) => (
+        <GridTile
+          key={tile.img}
+          title={tile.title}
+          actionPosition="left"
+          actionIcon={
+            <InterestCheckbox onCheck={(tile) => {
+              console.log(tile)
+              this.props.onInterestTileToggle(tile)}}/>
+          }
+          titlePosition="bottom"
+          titleBackground="linear-gradient(to bottom, rgba(15,23,115,1) 0%,rgba(15,23,115,0.7) 70%,rgba(15,23,115,0.5) 100%)"
+          className="tileStyle"
+        >
+          <img alt="" src={require('../../img/interests/' + tile.img)} />
+        </GridTile>))
+    return tiles;
+  }
+
   updateInterests(tile){
     console.log(tile);
     console.log("interests updated");
     this.props.onInterestTileToggle(tile.title);
   }
 
-  render(){
+  render() {
     return(
       <div style={styles.root} className="themeFont">
         <div><img alt="logo" align="center" className="logo" src={require('../../img/logo.png')} /></div>
@@ -112,25 +132,11 @@ export default class Tutorial extends React.Component {
             cols={5}
             cellHeight={200}
             padding={1}
-            style={styles.gridList}
-          >
-            {tilesData.map((tile) => (
-              <GridTile
-                key={tile.img}
-                title={tile.title}
-                actionPosition="left"
-                actionIcon={
-                  <InterestCheckbox onClick={this.updateInterests(tile)}/>
-                }
-                titlePosition="bottom"
-                titleBackground="linear-gradient(to bottom, rgba(15,23,115,1) 0%,rgba(15,23,115,0.7) 70%,rgba(15,23,115,0.5) 100%)"
-                className="tileStyle"
-              >
-                <img alt="" src={require('../../img/interests/' + tile.img)} />
-              </GridTile>))}
+            style={styles.gridList}>
+            {this.generateTiles()}
           </GridList>
           <div align="center">
-            <button onClick={this.props.onGridLoginClick} className="raisedButton"><Link to="/">I'm ready to see my map!</Link></button>
+            <button onClick={this.props.onGridLoginClick} className="raisedButton"><Link to="/dash">I'm ready to see my map!</Link></button>
           </div>
           </div>
       </MuiThemeProvider>
